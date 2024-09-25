@@ -1,0 +1,393 @@
+/* Default Color File  */
+
+
+
+
+/* Color */
+a:hover,
+a {
+    color: #276fe9;
+}
+
+.scroll-to-top:hover,
+.preloader-close,
+.search-popup .search-form fieldset input[type="submit"] {
+    background-color: #276fe9;
+}
+
+.scroll-to-top {
+    color: #276fe9;
+    border: 2px dashed #276fe9;
+}
+
+
+.btn-style-one.style-two i {
+    color: #276fe9;
+}
+
+.btn-style-one.style-two:before {
+    background: #276fe9;
+}
+
+.btn-style-one.style-two:hover {
+    border-color: #276fe9;
+}
+
+.btn-style-one {
+    background-color: #276fe9;
+}
+
+.header-top .social-icon li a:hover {
+    color: #276fe9;
+}
+
+.main-menu .navigation>li>ul>li>a:hover {
+    color: #276fe9;
+}
+
+.main-menu .navigation>li>ul>li>ul>li>a:hover {
+    color: #276fe9;
+}
+
+.banner-section .banner-slider-button-next:hover {
+    background-color: #276fe9;
+}
+
+.banner-section .banner-slider-button-prev:hover {
+    background-color: #276fe9;
+}
+
+.course-details .text-block .top-content {
+    background: #276fe9;
+}
+
+.course-details .text-block .link-btn a:hover {
+    color: #276fe9;
+}
+
+.course-details .text-block .link-btn a i {
+    color: #276fe9;
+}
+
+.blog-single-post blockquote:before {
+    background: #276fe9;
+}
+
+.blog-single-post .post-share-info .tag span i {
+    margin-right: 8px;
+    color: #276fe9;
+}
+
+.blog-single-post .social-links li a:before {
+    background: #276fe9;
+}
+
+.comments-area .comment-box .reply-btn a:hover {
+    color: #276fe9;
+}
+
+.comments-area .comment-box .theme-btn:after {
+    color: #276fe9;
+}
+
+.btn-style-one.style-three:hover {
+    color: #276fe9;
+}
+
+.btn-style-one.style-three:after {
+    top: 14px;
+    color: #276fe9;
+}
+
+.header-top ul.contact-info li i {
+    color: #276fe9;
+}
+
+.main-menu .navigation>li.current>a {
+    color: #276fe9;
+}
+
+.hidden-sidebar .content-wrapper {
+    background: #276fe9;
+}
+
+.hidden-sidebar-close {
+    background: #35bba1;
+}
+
+.about-widget .social-links li a:before {
+    background: #276fe9;
+}
+
+.newsletter-widget .theme-btn {
+    background-color: #276fe9;
+}
+
+.newsletter-widget .theme-btn:hover {
+    background-color: #fff;
+    color: #276fe9;
+}
+
+.links-widget ul li a:after {
+    color: #276fe9;
+}
+
+.contact-widget .contact-info li:hover .icon {
+    background-color: #276fe9;
+}
+
+.footer-bottom .footer-menu li a:hover {
+    color: #276fe9;
+}
+
+.service-block-one .inner-box.active,
+.service-block-one .inner-box:hover {
+    border-color: #276fe9;
+}
+
+.service-block-one .inner-box:before {
+    background-color: #276fe9;
+}
+
+.about-section .contact-number a {
+    color: #276fe9;
+}
+
+.about-section .contact-number a:hover {
+    border-color: #276fe9;
+}
+
+.about-section .contact-number a i {
+    background-color: #276fe9;
+}
+
+.about-section .contact-number a:hover i {
+    color: #276fe9;
+}
+
+.course-block h4 a:hover {
+    color: #276fe9;
+}
+
+.feature-banner-section h3 a {
+    color: #276fe9;
+}
+
+.process-block .count {
+    background-color: #276fe9;
+}
+
+.testimonials-section .owl-dots .owl-dot:hover,
+.testimonials-section .owl-dots .owl-dot.active{
+    background-color:#276fe9;
+}
+
+.testimonial-block h5 {
+    color: #276fe9;
+}
+
+.news-block .post-meta-info .category {
+    background-color: #276fe9;
+}
+
+.news-block h4 a:hover {
+    color: #276fe9;
+}
+
+.main-header .header-upper .sidemenu-nav-toggler {
+    background: #276fe9;
+}
+
+.about-section-two .consult-form-wrapper .top-content {
+    background-color: #276fe9;
+}
+
+.course-block-two h4 a:hover {
+    color: #276fe9;
+}
+
+.course-block-two .btn-style-one.style-three:hover {
+    border-color: #276fe9;
+}
+
+.course-block-two .btn-style-one.style-three:before {
+    background: #276fe9;
+}
+
+.course-package-block .top-content {
+    background: #276fe9;
+}
+
+.course-package-block .link-btn a:hover {
+    color: #276fe9;
+}
+
+.course-package-block .link-btn a i {
+    color: #276fe9;
+}
+
+.courses-package-section .owl-dots .owl-dot:hover,
+.courses-package-section .owl-dots .owl-dot.active{
+    background-color:#276fe9;
+}
+
+.cta-section-two .contact-number a:hover {
+    border-color: #276fe9;
+}
+
+.cta-section-two .contact-number a i {
+    background-color: #276fe9;
+}
+
+.cta-section-two .contact-number a:hover i {
+    color: #276fe9;
+}
+
+.two-column-section .owl-theme .owl-nav .owl-prev:hover:after,
+.two-column-section .owl-theme .owl-nav .owl-next:hover:after {
+    border-color: #276fe9;
+    background-color: #276fe9;
+}
+
+.pricing-section .tab-area .tab-btn-style-one li a.active h4 {
+    color: #276fe9;
+}
+
+.pricing-block .price-box {
+    background-color: #276fe9;
+}
+
+.main-header .header-upper .contact-info .icon:before {
+    background: #1551b6;
+}
+
+.driving-courses-section .project-tab .project-tab-btns .p-tab-btn:hover, 
+.driving-courses-section .project-tab .project-tab-btns .p-tab-btn.active-btn {
+    color: #1551b6;
+}
+
+.driving-courses-section .owl-theme .owl-nav .owl-prev:hover:after,
+.driving-courses-section .owl-theme .owl-nav .owl-next:hover:after {
+    border-color: #1551b6;
+    background-color: #1551b6;
+}
+
+.pricing-block:nth-child(2) .price-box {
+    background-color: #1551b6;
+}
+
+.pricing-block .link-btn .theme-btn:hover {
+    border-color: #276fe9;
+}
+
+.pricing-block .link-btn .btn-style-one:before {
+    background-color: #276fe9;
+}
+
+.mission-section .nav-tabs .nav-link.active h4:before {
+    background-color: #276fe9;
+}
+
+.mission-section .icon-box .icon {
+    background: #276fe9;
+}
+
+.team-section .icon-box {
+    background-color: #276fe9;
+}
+
+.history-section .nav-tabs.tab-btn-style-one li.nav-item a.active:before {
+    background-color: #276fe9;
+}
+
+.history-section .nav-tabs.tab-btn-style-one li.nav-item a.active:after {
+    background: #276fe9;
+}
+
+.history-section .nav-tabs.tab-btn-style-one .active h4 {
+    color: #276fe9;
+}
+
+.history-section .content h4 {
+    color: #276fe9;
+}
+
+.accordion-box .block .acc-btn.active {
+    background: #276fe9;
+    border-color: #276fe9;
+}
+
+.banner-widget .contact-number a {
+    color: #276fe9;
+}
+
+.banner-widget .contact-number a:hover {
+    border-color: #276fe9;
+}
+
+.banner-widget .contact-number a i {
+    background-color: #276fe9;
+}
+
+.banner-widget .contact-number a:hover i {
+    color: #276fe9;
+}
+
+.contact-section .tab-area .tab-btn-style-one li a.active h4 {
+    color: #276fe9;
+}
+
+.categories-list li.current a:after,
+.categories-list li a:hover:after {
+    color: #276fe9;
+}
+
+.categories-list li.current a:before,
+.categories-list li a:hover:before {
+    background-color: #276fe9;
+}
+
+.widget_popular_post .content h5 a:hover {
+    color: #276fe9;
+}
+
+.widget_popular_post .content .post-info i {
+    color: #276fe9;
+}
+
+.widget_tag_cloud li a:hover {
+    background-color: #276fe9;
+}
+
+.news-block .share ul.social-links li a:hover {
+    color: #276fe9;
+}
+
+.news-block .share ul.social-links li a:hover {
+    color: #276fe9;
+}
+
+.banner-widget.style-two .contact-number a {
+    background: #276fe9;
+    border-color: #276fe9;
+}
+
+.widget_download {
+    background: #276fe9 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
