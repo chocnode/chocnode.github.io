@@ -2,11 +2,10 @@
 <html lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://chocnode.github.io" />
+        <link rel="canonical" href="https://chocnode.github.io/news/article-25773.htm" />
     <meta charset="utf-8">
-    <title>2024-10归档 - Choc Node免费机场订阅节点官网</title>
-        <meta name="keywords" content="2024-10归档" />
-        <meta name="description" content="2024-10归档" />
+    <title>vue在进行增删改操作后刷新页面</title>
+        <meta name="description" content="问题 通常在后台管理项目中，对数据进行增删改查是常规操作。在进行这些操作后，需要手动刷新才能更新列表。本文主要讨论进行增删改查相关操作后如何使当前页面显示操作后的最新数据。  解决方案 || 以删除为" />
         <link rel="icon" href="/assets/website/img/chocnode/favicon.ico" type="image/x-icon"/>
     <!-- Stylesheets -->
     <link href="/assets/website/css/chocnode/bootstrap.css" rel="stylesheet">
@@ -35,7 +34,7 @@
      crossorigin="anonymous"></script>
 </head>
 
-<body data-page="category">
+<body data-page="detail">
     <div class="page-wrapper">
                 <!-- Preloader -->
         <div class="loader-wrap">
@@ -136,11 +135,12 @@
                 <div class="content-box">
                     <div class="content-wrapper">
                         <div class="title">
-                            <h1>2024-10 归档</h1>
+                            <h1>vue在进行增删改操作后刷新页面</h1>
                         </div>
                         <ul class="bread-crumb">
                             <li><a href="/">首页</a></li>
-                            <li>2024-10 归档</li>
+                            <li><a href="/news/">新闻资讯</a></li>
+                            <li>正文</li>
                         </ul>
                     </div>
                 </div>
@@ -151,30 +151,12 @@
             <div class="auto-container">
                 <div class="row">
                     <div class="col-md-9">
-                        <div class="xcblog-blog-list">
-                                                        <div class="row item xcblog-blog-item" data-date="2024-10-01">
-                                <div class="col-md-3">
-                                    <div class="image-block">
-                                        <div class="image-one">
-                                            <a href="/free-nodes/2024-10-1-node-share-links.htm" class="xcblog-blog-url">
-                                                <img src="/uploads/20240925/cf6aacd5de992bd910d016e269c4e915.webp" alt="10月1日→18.8M/S|2024年最新免费节点Choc Node订阅链接地址">
-                                            </a>
-                                        </div>
+                                          				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2> <a id="_0" rel="nofollow"></a>问题</h2> <p>通常在后台管理项目中，对数据进行增删改查是常规操作。在进行这些操作后，需要手动刷新才能更新列表。本文主要讨论进行增删改查相关操作后如何使当前页面显示操作后的最新数据。</p> <h2> <a id="___3" rel="nofollow"></a>解决方案 || 以删除为例：</h2> <p>1.强制刷新：this.$forceUpdate()<br /> 2.使用window.reload( ) 或 router.go(0)，但会使整个浏览器进行重载，页面闪烁。<br /> 3.重新调用接口:但性能较差，代码冗长。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221207/708f40bc45bafe613a2a5b5d6bf0c304.jpg" alt="vue在进行增删改操作后刷新页面"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221207/8a2db264ce84503a99eb2aca26cf99f3.jpg" alt="vue在进行增删改操作后刷新页面"><br /> 4.provide / inject ：（推荐）<br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://cn.vuejs.org/v2/api/#provide-inject"  rel="nofollow">点此查看VUE官方解释</a>：<br /> 允许一个祖先组件向其所有子孙后代注入一个依赖，不论组件层次有多深，并在其上下游关系成立的时间里始终生效。</p> <ul> <li>首先在App.vue全局设置provide<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221207/3ea3db43a7938b61ca4b6da0153b3003.jpg" alt="vue在进行增删改操作后刷新页面"><img decoding="async" src="http://img.555519.xyz/uploads/20221207/7c87d57468246c87f50c5e846a7a5fb4.jpg" alt="vue在进行增删改操作后刷新页面"><img decoding="async" src="http://img.555519.xyz/uploads/20221207/8aeb732ba6964cccbfa100fddf81eeb6.jpg" alt="vue在进行增删改操作后刷新页面"> </li> <li>在需要刷新的操作页面内注入inject：[‘reload’]<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221207/856e6fc9d29882a684f89cf1d97d5768.jpg" alt="vue在进行增删改操作后刷新页面"> </li> <li>在调用接口操作成功后 this.reload( )</li> <li>比如在删除接口调用成功后：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221207/8bb0eac5abe095ba762fdcd1cfc60b03.jpg" alt="vue在进行增删改操作后刷新页面"> </li> </ul> <p>划重点</p> <ul> <li>provide：一个对象或返回一个对象的函数。该对象包含可注入其子孙的属性。</li> <li>inject：一个字符串数组，或一个对象，对象的 key 是本地的绑定名。</li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://cn.vuejs.org/v2/api/#vm-nextTick"  rel="nofollow">$nextTick（点击查看vue相关文档）</a></li> </ul> <p>除此之外，provide和inject的用法主要是：在父组件中通过provider来提供变量，然后在子组件中通过inject来注入变量。</p> <p>需要注意的是这里不论子组件有多深，只要调用了inject那么就可以注入provider中的数据。而不是局限于只能从当前父组件的prop属性来获取数据。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-25312.htm">动物疫苗生产厂家排名榜单图片 动物疫苗生产厂家排名榜单图片大全</a></p>
+                                        <p>下一个：<a href="/news/article-25774.htm">中国宠物粮品牌排行榜最新名单（中国宠物粮品牌排行榜最新名单及价格）</a></p>
                                     </div>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="content-block">
-                                        <a href="/free-nodes/2024-10-1-node-share-links.htm" class="xcblog-blog-url">
-                                            <h3 class="mb-2 xcblog-blog-title">10月1日→18.8M/S|2024年最新免费节点Choc Node订阅链接地址</h3>
-                                        </a>
-                                        <div class="sub-title">
-                                            这一次的节点更新覆盖了香港、欧洲、新加坡、日本、韩国、加拿大、美国等地区,最高速度可达18.8 M/S。只需复制下方的Clash/v2ray订阅链接,在客户端添加后即可正常使用。                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            
-                            <ul class="pagination"><li><a href="/date/2024-10/page-3.htm">&laquo;</a></li> <li><a href="/date/2024-10/">1</a></li><li><a href="/date/2024-10/page-2.htm">2</a></li><li><a href="/date/2024-10/page-3.htm">3</a></li><li class="active"><span>4</span></li> <li class="disabled"><span>&raquo;</span></li></ul>                        </div>
-                    </div>
                     <div class="col-md-3">
                         <div class="panel panel-default">
     <div class="panel-heading">
@@ -182,16 +164,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-10-28-free-high-speed-nodes.htm" title="10月28日→22M/S|2024年最新免费节点Choc Node订阅链接地址">10月28日→22M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-10-free-subscribe-node.htm" title="11月10日→21.5M/S|2024年最新免费节点Choc Node订阅链接地址">11月10日→21.5M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-22994.htm" title="JavaScript如何使用过滤器从数组中删除元素">JavaScript如何使用过滤器从数组中删除元素</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-27-free-high-speed-nodes.htm" title="9月27日→18.3M/S|2024年最新免费节点Choc Node订阅链接地址">9月27日→18.3M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-26-free-high-speed-nodes.htm" title="11月26日→18.8M/S|2024年最新免费节点Choc Node订阅链接地址">11月26日→18.8M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-28-free-node-subscribe.htm" title="9月28日→20.6M/S|2024年最新免费节点Choc Node订阅链接地址">9月28日→20.6M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-22995.htm" title="宠物粮食批发进货渠道有哪些呢视频介绍（宠物粮食批发进货渠道有哪些呢视频介绍大全）">宠物粮食批发进货渠道有哪些呢视频介绍（宠物粮食批发进货渠道有哪些呢视频介绍大全）</a></li>
+                        <li class="py-2"><a href="/news/article-19789.htm" title="收狗狗的平台哪个好（收狗狗的平台哪个好一点）">收狗狗的平台哪个好（收狗狗的平台哪个好一点）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-2-free-node-subscribe-links.htm" title="12月2日→18.1M/S|2024年最新免费节点Choc Node订阅链接地址">12月2日→18.1M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-25774.htm" title="中国宠物粮品牌排行榜最新名单（中国宠物粮品牌排行榜最新名单及价格）">中国宠物粮品牌排行榜最新名单（中国宠物粮品牌排行榜最新名单及价格）</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-12-10-free-subscribe-node.htm" title="12月10日→18.6M/S|2024年最新免费节点Choc Node订阅链接地址">12月10日→18.6M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-18-node-share.htm" title="10月18日→22.2M/S|2024年最新免费节点Choc Node订阅链接地址">10月18日→22.2M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-10-node-share-links.htm" title="10月10日→18.7M/S|2024年最新免费节点Choc Node订阅链接地址">10月10日→18.7M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-24844.htm" title="动物疫苗接种的目的是什么 动物疫苗接种的目的是什么呢">动物疫苗接种的目的是什么 动物疫苗接种的目的是什么呢</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-25-free-node-subscribe-links.htm" title="10月25日→18.7M/S|2024年最新免费节点Choc Node订阅链接地址">10月25日→18.7M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-25312.htm" title="动物疫苗生产厂家排名榜单图片 动物疫苗生产厂家排名榜单图片大全">动物疫苗生产厂家排名榜单图片 动物疫苗生产厂家排名榜单图片大全</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-4-node-share-links.htm" title="10月4日→21.6M/S|2024年最新免费节点Choc Node订阅链接地址">10月4日→21.6M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-5-free-node-subscribe.htm" title="11月5日→22.2M/S|2024年最新免费节点Choc Node订阅链接地址">11月5日→22.2M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24354.htm" title="关于宠物猫疫苗的作文（关于宠物猫疫苗的作文怎么写）">关于宠物猫疫苗的作文（关于宠物猫疫苗的作文怎么写）</a></li>
                     </ul>
     </div>
 </div>
