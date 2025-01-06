@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://chocnode.github.io/news/article-36651.htm" />
+    <meta charset="utf-8">
+    <title>servlet 中 servlet context 与 session 与 request 三个对象的常用方法和存放数据的作用域。</title>
+        <meta name="description" content="  在一个web应用中，servlet主要通过servlet&nbsp;context、session、request这三个对象来传递信息，但三种容器的作用域不同，需根据需求来选择容器。 servle" />
+        <link rel="icon" href="/assets/website/img/chocnode/favicon.ico" type="image/x-icon"/>
+    <!-- Stylesheets -->
+    <link href="/assets/website/css/chocnode/bootstrap.css" rel="stylesheet">
+    <link href="/assets/website/css/chocnode/style.css" rel="stylesheet">
+    <!-- Responsive File -->
+    <link href="/assets/website/css/chocnode/responsive.css" rel="stylesheet">
+    <!-- Color File -->
+    <link href="/assets/website/css/chocnode/color.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LNK9XRH7SG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LNK9XRH7SG');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="page-wrapper">
+                <!-- Preloader -->
+        <div class="loader-wrap">
+            <div class="preloader">
+                <div class="preloader-close">Preloader Close</div>
+            </div>
+            <div class="layer layer-one"><span class="overlay"></span></div>
+            <div class="layer layer-two"><span class="overlay"></span></div>
+            <div class="layer layer-three"><span class="overlay"></span></div>
+        </div>
+        <!-- Main Header -->
+        <header class="main-header header-style-one">
+            <!-- Header Upper -->
+            <div class="header-upper">
+                <div class="auto-container">
+                    <div class="inner-container">
+                        <!--Logo-->
+                        <div class="logo-box">
+                            <div class="logo">
+                                                                <a href="/">
+                                    <span>ChocNode</span>
+                                </a>
+                                                            </div>
+                        </div>
+                        <div class="right-column">
+                            <!--Nav Box-->
+                            <div class="nav-outer">
+                                <!--Mobile Navigation Toggler-->
+                                <div class="mobile-nav-toggler"><img src="/assets/website/img/chocnode/icons/icon-bar.png" alt=""></div>
+                                <!-- Main Menu -->
+                                <nav class="main-menu navbar-expand-md navbar-light">
+                                    <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                        <ul class="navigation">
+                                                                                        <li><a href="/">首页</a></li>
+                                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                                        <li><a href="#">关于</a></li>
+                                            <li><a href="#">联系</a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Header Upper-->
+            <!-- Sticky Header  -->
+            <div class="sticky-header">
+                <div class="header-upper">
+                    <div class="auto-container">
+                        <div class="inner-container">
+                            <div class="right-column">
+                                <!--Nav Box-->
+                                <div class="nav-outer">
+                                    <!--Mobile Navigation Toggler-->
+                                    <div class="mobile-nav-toggler"><img src="/assets/website/img/chocnode/icons/icon-bar.png" alt=""></div>
+                                    <!-- Main Menu -->
+                                    <nav class="main-menu navbar-expand-md navbar-light">
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End Sticky Menu -->
+            <!-- Mobile Menu  -->
+            <div class="mobile-menu">
+                <div class="menu-backdrop"></div>
+                <div class="close-btn"><span class="icon flaticon-remove"></span></div>
+                <nav class="menu-box">
+                    <div class="nav-logo mb-5"></div>
+                    <div class="menu-outer">
+                        <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                    </div>
+                    <!--Social Links-->
+                    <div class="social-links">
+                        <ul class="clearfix">
+                            <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                            <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+                            <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                            <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                            <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div><!-- End Mobile Menu -->
+            <div class="nav-overlay">
+                <div class="cursor"></div>
+                <div class="cursor-follower"></div>
+            </div>
+        </header>
+        <!-- End Main Header -->
+        <!-- Page Title -->
+        <section class="page-title" style="background-image: url(/assets/website/img/chocnode/background/bg-8.jpg);">
+            <div class="auto-container">
+                <div class="content-box">
+                    <div class="content-wrapper">
+                        <div class="title">
+                            <h1>servlet 中 servlet context 与 session 与 request 三个对象的常用方法和存放数据的作用域。</h1>
+                        </div>
+                        <ul class="bread-crumb">
+                            <li><a href="/">首页</a></li>
+                            <li><a href="/news/">新闻资讯</a></li>
+                            <li>正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Section -->
+        <section class="about-section py-5">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>  在一个web应用中，servlet主要通过servlet&nbsp;context、session、request这三个对象来传递信息，但三种容器的作用域不同，需根据需求来选择容器。</p> <h2>servlet context：servlet容器，<span style="color:#000000;">用于实现</span><span style="color:#000000;">Web</span><span style="color:#000000;">应用中的资源共享</span></h2> <p>在一个项目中只会有一个servlet容器。</p> <h3><span style="color:#000000;">常用方法：</span></h3> <ul> <li><span style="color:#000000;">ServletContext&nbsp; getServletContext( )&nbsp; &nbsp;获取</span>servle容器对象</li> </ul> <div> <ul> <li><span style="color:#000000;">void setAttribute (String name, Object object )&nbsp; 利用</span>servlet容器保存数据</li> <li><span style="color:#000000;">Object getAttribute (String name )&nbsp;&nbsp;用</span>servlet容器取出数据</li> <li><span style="color:#000000;">String getRealPath (String path )&nbsp;&nbsp;返回参数所代表目录的真实路径（项目路径）</span></li> </ul> <h3>作用域：</h3> <p>在一个项目中只会有一个servlet容器，不论在哪一个页面获取到的都是同一个容器，即servlet容器可作用于所有的项目页面，也就是说，servlet容器<span style="color:#000000;">在整个个应用服务器范围内有效。</span></p> <h2><span style="color:#000000;">session：会话，用于记录会话状态的相关信息</span></h2> <div>   浏览器可创建一个session，用于存放数据，一个浏览器只有一个session。</div> <h3>&nbsp; 常用方法：</h3> <ul> <li> <div><span style="color:#0d0016;">HttpSession getSession( )&nbsp; 获取session对象</span></div> </li> <li> <div><span style="color:#000000;">String getId()</span><span style="color:#000000;">获取</span><span style="color:#000000;">sessionid</span></div> </li> <li> <div><span style="color:#000000;">void setMaxInactiveInterval(int interval)</span><span style="color:#000000;">设定</span><span style="color:#000000;">session</span><span style="color:#000000;">的非活动时间</span></div> </li> <li> <div> <div><span style="color:#000000;">void invalidate()</span><span style="color:#000000;">设置</span><span style="color:#000000;">session</span><span style="color:#000000;">对象失效</span></div> </div> </li> <li> <div><span style="color:#000000;">void setAttribute(String key, Object value)&nbsp;&nbsp;利用</span>session保存数据</div> </li> <li> <div><span style="color:#000000;">Object getAttribute(String key)</span>取出数据</div> </li> <li> <div> <p><span style="color:#000000;">void removeAttribute(String key)&nbsp; 删除数据</span></p> <h3>生命周期</h3> <ul> <li>不同的浏览器获取的sessio对象不同</li> <li>浏览器关闭后，获取不到之前的session</li> <li>服务器异常、关闭、重启，session对象会被销毁</li> <li>用户“安全退出”，session失效</li> <li>session生命时间超时，session失效</li> </ul> <h3>作用域：</h3> <p>在session生命周期内，session对象<span style="color:#000000;">在一次会话范围内容有效。</span></p> <h2>request ：<span style="color:#000000;">主要用于处理客户端请求的数据信息</span></h2> <p><span style="color:#000000;">利用request来传递信息时，需要和转发配合使用，可保证是同一个请求。</span></p> <h3>常用方法：</h3> <ul> <li><span style="color:#0d0016;">Object getAttribute ( String name )&nbsp;&nbsp;获取名称为name的属性值</span></li> <li><span style="color:#0d0016;">void setAttribute (String name, Object object )&nbsp;&nbsp;在请求中保存名称为name的属性</span></li> <li><span style="color:#0d0016;">void removeAttribute (String name)&nbsp;&nbsp;清除请求中名字为name的属性</span></li> <li><span style="color:#0d0016;">String getCharacterEncoding ( )&nbsp;&nbsp;返回请求体所使用的字符编码</span></li> <li><span style="color:#0d0016;">void setCharacterEncoding (String charset )&nbsp;&nbsp;设置请求体的字符编码</span></li> <li><span style="color:#0d0016;">String getParameter ( String name )&nbsp; 获取参数</span></li> <li><span style="color:#0d0016;">String[ ] getParameterValues (String name )&nbsp;&nbsp;返回指定请求参数的全部值</span></li> <li><span style="color:#0d0016;">RequestDispatcher getRequestDispatcher( String path )&nbsp;&nbsp;返回指定路径的请求分发对象</span></li> </ul> <h3>作用域：</h3> <div><span style="color:#000000;">在一个服务器请求范围内有效。</span></div> </div> </li> </ul> </div> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-36649.htm">SpringBoot：Controller层调用Service层，出现bug</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-36224.htm" title="给宠物猫打疫苗多少钱一针（给宠物猫打疫苗需要多少钱）">给宠物猫打疫苗多少钱一针（给宠物猫打疫苗需要多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-22-free-high-speed-nodes.htm" title="12月22日→20.2M/S|2024年最新免费节点Choc Node订阅链接地址">12月22日→20.2M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-23441.htm" title="HTML中schema.org SiteNavigationElement的正确用法是什么？">HTML中schema.org SiteNavigationElement的正确用法是什么？</a></li>
+                        <li class="py-2"><a href="/news/article-33295.htm" title="天津宠物猫免费领养地址（天津宠物猫免费领养地址电话）">天津宠物猫免费领养地址（天津宠物猫免费领养地址电话）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-19-free-node-subscribe.htm" title="12月19日→19.6M/S|2024年最新免费节点Choc Node订阅链接地址">12月19日→19.6M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-19-free-node-subscribe.htm" title="10月19日→21.6M/S|2024年最新免费节点Choc Node订阅链接地址">10月19日→21.6M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-26704.htm" title="动物医院介绍科室怎么写的（动物医院简介百度文库）">动物医院介绍科室怎么写的（动物医院简介百度文库）</a></li>
+                        <li class="py-2"><a href="/news/article-29500.htm" title="国内动物疫苗龙头企业名单公示（动物疫苗生产厂家排名）">国内动物疫苗龙头企业名单公示（动物疫苗生产厂家排名）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-26-node-share.htm" title="12月26日→22.4M/S|2024年最新免费节点Choc Node订阅链接地址">12月26日→22.4M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-28097.htm" title="javaScript中内置对象Date基本操作入门_在线工具">javaScript中内置对象Date基本操作入门_在线工具</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">91</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="main-footer" style="background-image: url(/assets/website/img/chocnode/background/bg-1.jpg);">
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="auto-container">
+                    <div class="wrapper-box">
+                        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <div class="text">
+                                <a href="/">Choc Node免费机场订阅节点官网</a> 版权所有
+                                <br />
+                                Powered by WordPress
+                            </div>
+                        </div>
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#">Sitemap </a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Scroll to top-->
+        <div class="scroll-to-top scroll-to-target" data-target="html"><span class="flaticon-right-arrow-4"></span></div>
+        <script src="/assets/website/js/frontend/chocnode/jquery.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/bootstrap-select.min.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/jquery.fancybox.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/isotope.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/owl.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/appear.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/wow.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/lazyload.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/scrollbar.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/TweenMax.min.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/swiper.min.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/jquery.polyglot.language.switcher.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/jquery.ajaxchimp.min.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/parallax-scroll.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/script.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!--End pagewrapper-->
+</body>
+
+</html>
