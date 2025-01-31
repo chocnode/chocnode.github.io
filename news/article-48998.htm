@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://chocnode.github.io/news/article-48998.htm" />
+    <meta charset="utf-8">
+    <title>关于信号量Semaphore的acquire与release的说明</title>
+        <meta name="description" content="Semaphore 是 synchronized 的加强版，作用是控制线程的并发数量。 关于信号量Semaphore的acquire与release的说明 1、Semaphore信号量作为一种流控手段" />
+        <link rel="icon" href="/assets/website/img/chocnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Choc Node免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://chocnode.github.io/news/article-48998.htm" />
+    <meta property="og:site_name" content="Choc Node免费机场订阅节点官网" />
+    <meta property="og:title" content="关于信号量Semaphore的acquire与release的说明" />
+    <meta property="og:image" content="https://chocnode.github.io/uploads/20240925/5ad064fac5cb09e542cc8a2cec649d6a.webp" />
+        <meta property="og:release_date" content="2025-01-31T07:19:04" />
+    <meta property="og:updated_time" content="2025-01-31T07:19:04" />
+        <meta property="og:description" content="Semaphore 是 synchronized 的加强版，作用是控制线程的并发数量。 关于信号量Semaphore的acquire与release的说明 1、Semaphore信号量作为一种流控手段" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="关于信号量Semaphore的acquire与release的说明">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Stylesheets -->
+    <link href="/assets/website/css/chocnode/bootstrap.css" rel="stylesheet">
+    <link href="/assets/website/css/chocnode/style.css" rel="stylesheet">
+    <!-- Responsive File -->
+    <link href="/assets/website/css/chocnode/responsive.css" rel="stylesheet">
+    <!-- Color File -->
+    <link href="/assets/website/css/chocnode/color.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LNK9XRH7SG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LNK9XRH7SG');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="page-wrapper">
+                <!-- Preloader -->
+        <div class="loader-wrap">
+            <div class="preloader">
+                <div class="preloader-close">Preloader Close</div>
+            </div>
+            <div class="layer layer-one"><span class="overlay"></span></div>
+            <div class="layer layer-two"><span class="overlay"></span></div>
+            <div class="layer layer-three"><span class="overlay"></span></div>
+        </div>
+        <!-- Main Header -->
+        <header class="main-header header-style-one">
+            <!-- Header Upper -->
+            <div class="header-upper">
+                <div class="auto-container">
+                    <div class="inner-container">
+                        <!--Logo-->
+                        <div class="logo-box">
+                            <div class="logo">
+                                                                <a href="/">
+                                    <span>ChocNode</span>
+                                </a>
+                                                            </div>
+                        </div>
+                        <div class="right-column">
+                            <!--Nav Box-->
+                            <div class="nav-outer">
+                                <!--Mobile Navigation Toggler-->
+                                <div class="mobile-nav-toggler"><img src="/assets/website/img/chocnode/icons/icon-bar.png" alt=""></div>
+                                <!-- Main Menu -->
+                                <nav class="main-menu navbar-expand-md navbar-light">
+                                    <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                        <ul class="navigation">
+                                                                                        <li><a href="/">首页</a></li>
+                                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                                        <li><a href="#">关于</a></li>
+                                            <li><a href="#">联系</a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Header Upper-->
+            <!-- Sticky Header  -->
+            <div class="sticky-header">
+                <div class="header-upper">
+                    <div class="auto-container">
+                        <div class="inner-container">
+                            <div class="right-column">
+                                <!--Nav Box-->
+                                <div class="nav-outer">
+                                    <!--Mobile Navigation Toggler-->
+                                    <div class="mobile-nav-toggler"><img src="/assets/website/img/chocnode/icons/icon-bar.png" alt=""></div>
+                                    <!-- Main Menu -->
+                                    <nav class="main-menu navbar-expand-md navbar-light">
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End Sticky Menu -->
+            <!-- Mobile Menu  -->
+            <div class="mobile-menu">
+                <div class="menu-backdrop"></div>
+                <div class="close-btn"><span class="icon flaticon-remove"></span></div>
+                <nav class="menu-box">
+                    <div class="nav-logo mb-5"></div>
+                    <div class="menu-outer">
+                        <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                    </div>
+                    <!--Social Links-->
+                    <div class="social-links">
+                        <ul class="clearfix">
+                            <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                            <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+                            <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                            <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                            <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div><!-- End Mobile Menu -->
+            <div class="nav-overlay">
+                <div class="cursor"></div>
+                <div class="cursor-follower"></div>
+            </div>
+        </header>
+        <!-- End Main Header -->
+        <!-- Page Title -->
+        <section class="page-title" style="background-image: url(/assets/website/img/chocnode/background/bg-8.jpg);">
+            <div class="auto-container">
+                <div class="content-box">
+                    <div class="content-wrapper">
+                        <div class="title">
+                            <h1>关于信号量Semaphore的acquire与release的说明</h1>
+                        </div>
+                        <ul class="bread-crumb">
+                            <li><a href="/">首页</a></li>
+                            <li><a href="/news/">新闻资讯</a></li>
+                            <li>正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Section -->
+        <section class="about-section py-5">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p><strong>Semaphore 是 synchronized 的加强版，作用是控制线程的并发数量。</strong></p> <p><strong>关于信号量Semaphore的acquire与release的说明</strong></p> <p><strong>1、Semaphore信号量作为一种流控手段，可以对特定资源的允许同时访问的操作数量进行控制，例如池化技术(连接池)中的并发数，有界阻塞容器的容量等。</strong></p> <p><strong>&nbsp;</strong></p> <p><strong>2、Semaphore中包含初始化时固定个数的许可，在进行操作的时候，需要先acquire获取到许可，才可以继续执行任务，如果获取失败，则进入阻塞；处理完成之后需要release释放许可。</strong></p> <p><strong>&nbsp;</strong></p> <p><strong>3、acquire与release之间的关系：在实现中不包含真正的许可对象，并且Semaphore也不会将许可与线程关联起来，因此在一个线程中获得的许可可以在另一个线程中释放。可以将acquire操作视为是消费一个许可，而release操作是创建一个许可，Semaphore并不受限于它在创建时的初始许可数量。也就是说acquire与release并没有强制的一对一关系，release一次就相当于新增一个许可，许可的数量可能会由于没有与acquire操作一对一而导致超出初始化时设置的许可个数。</strong></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-48394.htm">宠物用品批发商行（宠物店用品批发市场）</a></p>
+                                        <p>下一个：<a href="/news/article-48999.htm">动物疫苗新规定最新消息查询 动物疫苗新规定最新消息查询官网</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-25309.htm" title="格式字符串漏洞之任意地址覆盖大数字">格式字符串漏洞之任意地址覆盖大数字</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-20-free-subscribe-node.htm" title="10月20日→22.1M/S|2024年最新免费节点Choc Node订阅链接地址">10月20日→22.1M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-8-free-subscribe-node.htm" title="10月8日→21.7M/S|2024年最新免费节点Choc Node订阅链接地址">10月8日→21.7M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-31301.htm" title="宠物粮食加工厂设备有哪些厂家的品牌呢（宠物粮食加工设备贵吗）">宠物粮食加工厂设备有哪些厂家的品牌呢（宠物粮食加工设备贵吗）</a></li>
+                        <li class="py-2"><a href="/news/article-37132.htm" title="宠物用品批发进货渠道宠物用品优选倔强的尾巴（宠物用品批发商）">宠物用品批发进货渠道宠物用品优选倔强的尾巴（宠物用品批发商）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-2-free-subscribe-node.htm" title="11月2日→22M/S|2024年最新免费节点Choc Node订阅链接地址">11月2日→22M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-35183.htm" title="常用动物疫苗名称及作用（常用动物疫苗名称及作用是什么）">常用动物疫苗名称及作用（常用动物疫苗名称及作用是什么）</a></li>
+                        <li class="py-2"><a href="/news/article-45058.htm" title="JavaScript编写字符串函数来替换字符的第k个外观方法详解">JavaScript编写字符串函数来替换字符的第k个外观方法详解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-12-free-high-speed-nodes.htm" title="1月12日→21.5M/S|2025年最新免费节点Choc Node订阅链接地址">1月12日→21.5M/S|2025年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-16-free-subscribe-node.htm" title="11月16日→22.5M/S|2024年最新免费节点Choc Node订阅链接地址">11月16日→22.5M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">91</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="main-footer" style="background-image: url(/assets/website/img/chocnode/background/bg-1.jpg);">
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="auto-container">
+                    <div class="wrapper-box">
+                        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <div class="text">
+                                <a href="/">Choc Node免费机场订阅节点官网</a> 版权所有
+                                <br />
+                                Powered by WordPress
+                            </div>
+                        </div>
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#">Sitemap </a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Scroll to top-->
+        <div class="scroll-to-top scroll-to-target" data-target="html"><span class="flaticon-right-arrow-4"></span></div>
+        <script src="/assets/website/js/frontend/chocnode/jquery.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/bootstrap-select.min.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/jquery.fancybox.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/isotope.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/owl.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/appear.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/wow.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/lazyload.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/scrollbar.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/TweenMax.min.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/swiper.min.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/jquery.polyglot.language.switcher.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/jquery.ajaxchimp.min.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/parallax-scroll.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/script.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!--End pagewrapper-->
+</body>
+
+</html>
