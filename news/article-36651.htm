@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://chocnode.github.io/news/article-36651.htm" />
@@ -7,6 +7,33 @@
     <title>servlet 中 servlet context 与 session 与 request 三个对象的常用方法和存放数据的作用域。</title>
         <meta name="description" content="  在一个web应用中，servlet主要通过servlet&nbsp;context、session、request这三个对象来传递信息，但三种容器的作用域不同，需根据需求来选择容器。 servle" />
         <link rel="icon" href="/assets/website/img/chocnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Choc Node免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://chocnode.github.io/news/article-36651.htm" />
+    <meta property="og:site_name" content="Choc Node免费机场订阅节点官网" />
+    <meta property="og:title" content="servlet 中 servlet context 与 session 与 request 三个对象的常用方法和存放数据的作用域。" />
+    <meta property="og:image" content="https://chocnode.github.io/uploads/20240925/cf6aacd5de992bd910d016e269c4e915.webp" />
+        <meta property="og:release_date" content="2025-01-06T09:50:35" />
+    <meta property="og:updated_time" content="2025-01-06T09:50:35" />
+        <meta property="og:description" content="  在一个web应用中，servlet主要通过servlet&nbsp;context、session、request这三个对象来传递信息，但三种容器的作用域不同，需根据需求来选择容器。 servle" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="servlet 中 servlet context 与 session 与 request 三个对象的常用方法和存放数据的作用域。">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
     <!-- Stylesheets -->
     <link href="/assets/website/css/chocnode/bootstrap.css" rel="stylesheet">
     <link href="/assets/website/css/chocnode/style.css" rel="stylesheet">
@@ -164,16 +191,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-27168.htm" title="动物用疫苗种类有多少种（动物用疫苗种类有多少种图片）">动物用疫苗种类有多少种（动物用疫苗种类有多少种图片）</a></li>
-                        <li class="py-2"><a href="/news/article-28561.htm" title="动物疫苗上市公司有哪些企业名称和地址（动物疫苗的上市公司有哪些）">动物疫苗上市公司有哪些企业名称和地址（动物疫苗的上市公司有哪些）</a></li>
-                        <li class="py-2"><a href="/news/article-35725.htm" title="PyTorch的自动求导">PyTorch的自动求导</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-17-node-share-links.htm" title="10月17日→20.8M/S|2024年最新免费节点Choc Node订阅链接地址">10月17日→20.8M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-25312.htm" title="动物疫苗生产厂家排名榜单图片 动物疫苗生产厂家排名榜单图片大全">动物疫苗生产厂家排名榜单图片 动物疫苗生产厂家排名榜单图片大全</a></li>
-                        <li class="py-2"><a href="/news/article-22534.htm" title="Python实现数据透视表">Python实现数据透视表</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-20-free-node-subscribe-links.htm" title="12月20日→20.3M/S|2024年最新免费节点Choc Node订阅链接地址">12月20日→20.3M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-4-free-node-subscribe-links.htm" title="1月4日→18.2M/S|2025年最新免费节点Choc Node订阅链接地址">1月4日→18.2M/S|2025年最新免费节点Choc Node订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-21-free-subscribe-node.htm" title="10月21日→20.8M/S|2024年最新免费节点Choc Node订阅链接地址">10月21日→20.8M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-23-free-node-subscribe-links.htm" title="12月23日→19.5M/S|2024年最新免费节点Choc Node订阅链接地址">12月23日→19.5M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-6-node-share-links.htm" title="11月6日→20.8M/S|2024年最新免费节点Choc Node订阅链接地址">11月6日→20.8M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-47509.htm" title="宠物粮食生意怎么样赚钱的呢（宠物粮食利润大吗）">宠物粮食生意怎么样赚钱的呢（宠物粮食利润大吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-16-node-share-links.htm" title="1月16日→18.6M/S|2025年最新免费节点Choc Node订阅链接地址">1月16日→18.6M/S|2025年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-17-free-node-subscribe-links.htm" title="11月17日→20M/S|2024年最新免费节点Choc Node订阅链接地址">11月17日→20M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-22994.htm" title="JavaScript如何使用过滤器从数组中删除元素">JavaScript如何使用过滤器从数组中删除元素</a></li>
+                        <li class="py-2"><a href="/news/article-48998.htm" title="关于信号量Semaphore的acquire与release的说明">关于信号量Semaphore的acquire与release的说明</a></li>
+                        <li class="py-2"><a href="/news/article-34732.htm" title="vue项目几个比较好的实践(路由模块化，打包dll优化，vuex)">vue项目几个比较好的实践(路由模块化，打包dll优化，vuex)</a></li>
+                        <li class="py-2"><a href="/news/article-24354.htm" title="关于宠物猫疫苗的作文（关于宠物猫疫苗的作文怎么写）">关于宠物猫疫苗的作文（关于宠物猫疫苗的作文怎么写）</a></li>
+                        <li class="py-2"><a href="/news/article-44559.htm" title="一家宠物店年收入大概多少（一家宠物店一年可以赚多少钱）">一家宠物店年收入大概多少（一家宠物店一年可以赚多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-24-free-high-speed-nodes.htm" title="12月24日→20.4M/S|2024年最新免费节点Choc Node订阅链接地址">12月24日→20.4M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -185,16 +212,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">91</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
