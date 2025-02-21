@@ -180,6 +180,7 @@
                   				  				  				<p>C++的类成员指针是一种奇葩的指针。</p> <p>假设现在我们要表示一个三维的点，现在有两种定义方式：</p> <pre><code class="language-cpp">struct point1{ 	int x, y, z; };  struct point2{ 	int c[3]; };</code></pre> <p>第一种的优点是更直观，但第二种可以方便的用for遍历三个属性。最终我选择了第一种，但是我还想弄一个遍历功能怎么办？这个时候类成员指针就排上用场了，我们可以创建一个“指向point中具体成员的指针”。</p> <pre><code class="language-cpp">int A:: *member = &amp;A::x;</code></pre> <p>让member指针指向A中的成员x，且类型是int，此时我们就可以通过member来访问x：</p> <pre><code class="language-cpp">point1 tmp{4, 5, 6}; cout &lt;&lt; tmp.(*member); //把member解引用，得到tmp::x，表示要访问x</code></pre> <p>所以我们定义一个数组，就可以迭代访问类里的各种int属性了</p> <pre><code class="language-cpp">int A:: *member [] = {&amp;A::x, &amp;A::y, &amp;A::z}; for (int i = 0; i &lt; 3; ++i) 	cout &lt;&lt; tmp.(*member[i]);</code></pre> <p>这个用途也可以放到成员函数上，构建一个函数列表，顺序调用。</p> <p>这么个指针的行为跟一般的指针显然不一样，它不保存地址，而是保存一个“偏移量”，从对象地址开头到对象成员的偏移量。这玩意其实可以输出：</p> <pre><code class="language-cpp">struct A{ 	int a, b, c; };  main() { 	printf("%d%d%d", &amp;A::a, &amp;A::b, &amp;A::c); //! 输入为0, 4, 8 	//! 当然这玩意类型不是int，printf直接将他以int解析输出了，所以cout达不到效果 }</code></pre> <p>这样类成员指针的意义就很明显了，假设一个A的对象t，那么t的地址<code>&amp;t</code>和a的地址<code>&amp;(t.a)</code>是相等的，而<code>&amp;(t.b)</code>要多出来4，<code>&amp;(t.c)</code>又要多出来4。每个对象的内存构造都是一样的，这个类成员指针就是获取每个成员相对于头地址的偏移量，这样当我使用<code>t.*member</code>编译器就知道是头地址+4处的变量，并且是个int。</p> <p>不过成员函数又不太一样了。不同对象的成员函数只有同一份程序短代码。C++不能用<code>&amp;(t.fun)</code>的方式获取对象的成员函数的地址，要用取<code>&amp;A::fun</code>得到函数的地址。这个当然是真地址了。</p> <p>类成员指针可以用于<code>static</code>吗？显然不行，static成员单独存放，与类本身无关，取<code>&amp;A::staticmember</code>得到的就是这个变量的正经地址。那可以用于<code>virtual function</code>吗？答案是可以，但是虚函数的地址无法确定，所以又变成了储存偏移量，实际上储存的是函数在虚表中的索引值。</p> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-58824.htm">Feign远程调用以及Feign的最优使用</a></p>
+                                        <p>下一个：<a href="/news/article-59333.htm">PyCharm 2020.1启动报错 Caused by: java.net.BindException: Address already in use: bind</a></p>
                                     </div>
                                     </div>
                     <div class="col-md-3">
@@ -189,16 +190,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-27629.htm" title="动物医院取什么名字比较好一点（动物医院取什么名字比较好一点的）">动物医院取什么名字比较好一点（动物医院取什么名字比较好一点的）</a></li>
-                        <li class="py-2"><a href="/news/article-40096.htm" title="郑州市动物防疫站电话查询号码（郑州动物防疫监督所）">郑州市动物防疫站电话查询号码（郑州动物防疫监督所）</a></li>
-                        <li class="py-2"><a href="/news/article-46041.htm" title="瑞派宠物医院是24小时的吗怎么样呀（瑞派宠物医院营业时间）">瑞派宠物医院是24小时的吗怎么样呀（瑞派宠物医院营业时间）</a></li>
-                        <li class="py-2"><a href="/news/article-41576.htm" title="狗狗领养人违约（狗狗领养后出意外需要赔偿原主人吗）">狗狗领养人违约（狗狗领养后出意外需要赔偿原主人吗）</a></li>
-                        <li class="py-2"><a href="/news/article-32345.htm" title="家用小型狗粮机器价格多少（小型狗粮设备多少钱）">家用小型狗粮机器价格多少（小型狗粮设备多少钱）</a></li>
-                        <li class="py-2"><a href="/news/article-58825.htm" title="C++ 类成员指针">C++ 类成员指针</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-4-free-subscribe-node.htm" title="12月4日→22.1M/S|2024年最新免费节点Choc Node订阅链接地址">12月4日→22.1M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-54288.htm" title="领养狗狗协议书范文（领养犬协议）">领养狗狗协议书范文（领养犬协议）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-6-node-share-links.htm" title="11月6日→20.8M/S|2024年最新免费节点Choc Node订阅链接地址">11月6日→20.8M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-25-node-share-links.htm" title="12月25日→22.2M/S|2024年最新免费节点Choc Node订阅链接地址">12月25日→22.2M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-43576.htm" title="动物医院在哪个位置（动物医院是干嘛的）">动物医院在哪个位置（动物医院是干嘛的）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-28-free-node-subscribe.htm" title="12月28日→22.3M/S|2024年最新免费节点Choc Node订阅链接地址">12月28日→22.3M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-node-share.htm" title="11月29日→20.1M/S|2024年最新免费节点Choc Node订阅链接地址">11月29日→20.1M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-25309.htm" title="格式字符串漏洞之任意地址覆盖大数字">格式字符串漏洞之任意地址覆盖大数字</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-2-17-free-node-subscribe.htm" title="2月17日→19M/S|2025年最新免费节点V2ray/Clash/SSR/Shadowrocket订阅链接地址">2月17日→19M/S|2025年最新免费节点V2ray/Clash/SSR/Shadowrocket订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-18-free-high-speed-nodes.htm" title="2月18日→20.6M/S|2025年最新免费节点Clash/SSR/Shadowrocket/V2ray订阅链接地址">2月18日→20.6M/S|2025年最新免费节点Clash/SSR/Shadowrocket/V2ray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-6-node-share.htm" title="2月6日→20.1M/S|2025年最新免费节点Shadowrocket/V2ray/Clash/SSR订阅链接地址">2月6日→20.1M/S|2025年最新免费节点Shadowrocket/V2ray/Clash/SSR订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-41082.htm" title="动物防疫疫苗管理工作内容 动物防疫疫苗管理工作内容有哪些">动物防疫疫苗管理工作内容 动物防疫疫苗管理工作内容有哪些</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-11-free-high-speed-nodes.htm" title="12月11日→20.1M/S|2024年最新免费节点Choc Node订阅链接地址">12月11日→20.1M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -210,7 +211,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">54</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+                <h4><span class="badge" style="float: right;">63</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
