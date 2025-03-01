@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://chocnode.github.io/news/article-64061.htm" />
+    <meta charset="utf-8">
+    <title>C#反射调用dll文件中的方法操作泛型与属性字段_C#教程</title>
+        <meta name="description" content="一、使用方法   查找DLL文件，   通过Reflection反射类库里的各种方法来操作dll文件   二、步骤 加载DLL文件  Assembly assembly1 = Assembly.Loa" />
+        <link rel="icon" href="/assets/website/img/chocnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Choc Node免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://chocnode.github.io/news/article-64061.htm" />
+    <meta property="og:site_name" content="Choc Node免费机场订阅节点官网" />
+    <meta property="og:title" content="C#反射调用dll文件中的方法操作泛型与属性字段_C#教程" />
+    <meta property="og:image" content="https://chocnode.github.io/uploads/20240925/04711213bfee6f3e6a1e041d9ce2be88.webp" />
+        <meta property="og:release_date" content="2025-02-27T05:56:47" />
+    <meta property="og:updated_time" content="2025-02-27T05:56:47" />
+        <meta property="og:description" content="一、使用方法   查找DLL文件，   通过Reflection反射类库里的各种方法来操作dll文件   二、步骤 加载DLL文件  Assembly assembly1 = Assembly.Loa" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="C#反射调用dll文件中的方法操作泛型与属性字段_C#教程">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Stylesheets -->
+    <link href="/assets/website/css/chocnode/bootstrap.css" rel="stylesheet">
+    <link href="/assets/website/css/chocnode/style.css" rel="stylesheet">
+    <!-- Responsive File -->
+    <link href="/assets/website/css/chocnode/responsive.css" rel="stylesheet">
+    <!-- Color File -->
+    <link href="/assets/website/css/chocnode/color.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LNK9XRH7SG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LNK9XRH7SG');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <div class="page-wrapper">
+                <!-- Preloader -->
+        <div class="loader-wrap">
+            <div class="preloader">
+                <div class="preloader-close">Preloader Close</div>
+            </div>
+            <div class="layer layer-one"><span class="overlay"></span></div>
+            <div class="layer layer-two"><span class="overlay"></span></div>
+            <div class="layer layer-three"><span class="overlay"></span></div>
+        </div>
+        <!-- Main Header -->
+        <header class="main-header header-style-one">
+            <!-- Header Upper -->
+            <div class="header-upper">
+                <div class="auto-container">
+                    <div class="inner-container">
+                        <!--Logo-->
+                        <div class="logo-box">
+                            <div class="logo">
+                                                                <a href="/">
+                                    <span>Choc Node</span>
+                                </a>
+                                                            </div>
+                        </div>
+                        <div class="right-column">
+                            <!--Nav Box-->
+                            <div class="nav-outer">
+                                <!--Mobile Navigation Toggler-->
+                                <div class="mobile-nav-toggler"><img src="/assets/website/img/chocnode/icons/icon-bar.png" alt=""></div>
+                                <!-- Main Menu -->
+                                <nav class="main-menu navbar-expand-md navbar-light">
+                                    <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                                        <ul class="navigation">
+                                                                                        <li><a href="/">首页</a></li>
+                                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                                    </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Header Upper-->
+            <!-- Sticky Header  -->
+            <div class="sticky-header">
+                <div class="header-upper">
+                    <div class="auto-container">
+                        <div class="inner-container">
+                            <div class="right-column">
+                                <!--Nav Box-->
+                                <div class="nav-outer">
+                                    <!--Mobile Navigation Toggler-->
+                                    <div class="mobile-nav-toggler"><img src="/assets/website/img/chocnode/icons/icon-bar.png" alt=""></div>
+                                    <!-- Main Menu -->
+                                    <nav class="main-menu navbar-expand-md navbar-light">
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End Sticky Menu -->
+            <!-- Mobile Menu  -->
+            <div class="mobile-menu">
+                <div class="menu-backdrop"></div>
+                <div class="close-btn"><span class="icon flaticon-remove"></span></div>
+                <nav class="menu-box">
+                    <div class="nav-logo mb-5"></div>
+                    <div class="menu-outer">
+                        <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                    </div>
+                    <!--Social Links-->
+                    <div class="social-links">
+                        <ul class="clearfix">
+                            <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                            <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+                            <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                            <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                            <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div><!-- End Mobile Menu -->
+            <div class="nav-overlay">
+                <div class="cursor"></div>
+                <div class="cursor-follower"></div>
+            </div>
+        </header>
+        <!-- End Main Header -->
+        <!-- Page Title -->
+        <section class="page-title" style="background-image: url(/assets/website/img/chocnode/background/bg-8.jpg);">
+            <div class="auto-container">
+                <div class="content-box">
+                    <div class="content-wrapper">
+                        <div class="title">
+                            <h1>C#反射调用dll文件中的方法操作泛型与属性字段_C#教程</h1>
+                        </div>
+                        <ul class="bread-crumb">
+                            <li><a href="/">首页</a></li>
+                            <li><a href="/news/">新闻资讯</a></li>
+                            <li>正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Section -->
+        <section class="about-section py-5">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<h2>一、使用方法</h2> <ul> <li> <p>查找DLL文件，</p> </li> <li> <p>通过Reflection反射类库里的各种方法来操作dll文件</p> </li> </ul> <h2>二、步骤</h2> <p>加载DLL文件</p> <div class="ay1code"> <pre class="brush:csharp;">Assembly assembly1 = Assembly.Load("SqlServerDB");//方式一：这个DLL文件要在启动项目下  string filePath = Environment.CurrentDirectory + "";  Assembly assembly2 = Assembly.LoadFile(filePath + @"\SqlServerDB.dll");//方式二：完整路径  Assembly assembly3 = Assembly.LoadFrom(filePath + @"\SqlServerDB.dll");//方式三：完整路径  Assembly assembly4 = Assembly.LoadFrom(@"SqlServerDB.dll");//方式三：完整路径</pre> </div> <p>获取指定类型</p> <div class="ay1code"> <pre class="brush:csharp;">foreach (var item in assembly4.GetTypes())//查找所有的类型,就是有多少个类  {      Console.WriteLine(item.Name);  }</pre> </div> <p>获取构造函数</p> <div class="ay1code"> <pre class="brush:csharp;">Type type = assembly4.GetType("SqlServerDB.ReflectionTest");//在ReflectionTest类中调用  foreach (var ctor in type.GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public))  {      Console.WriteLine($"构造方法：{ctor.Name}");      foreach (var param in ctor.GetParameters())      {          Console.WriteLine($"构造方法的参数：{param.ParameterType}");      }  }  //【3】实例化  //ReflectionTest reflectionTest = new ReflectionTest();//这种实例化是知道具体类型--静态    //object objTest = Activator.CreateInstance(type);//动态实例化--调用我们的构造方法  object objTest1 = Activator.CreateInstance(type, new object[] { "string" });//动态实例化--调用我们的有参数构造方法    //调用私有构造函数  //ReflectionTest reflectionTest = new ReflectionTest();  //普通调用  object objTest2 = Activator.CreateInstance(type, true);</pre> </div> <p>调用非构造方法</p> <div class="ay1code"> <pre class="brush:csharp;">object objTest2 = Activator.CreateInstance(type, true);  //调用普通方法  ReflectionTest reflectionTest = objTest2 as ReflectionTest;//as转换的好处，它不报错，类型不对的话就返回null  reflectionTest.Show1();    //调用私有方法  var method = type.GetMethod("Show2", BindingFlags.Instance | BindingFlags.NonPublic);  method.Invoke(objTest2, new object[] { });</pre> </div> <p>调用泛型方法</p> <div class="ay1code"> <pre class="brush:csharp;">//泛型无参数  var method3 = type.GetMethod("Show3");//查找指定方法  var genericMethod = method3.MakeGenericMethod(new Type[] { typeof(int) });//指定泛型参数类型T  genericMethod.Invoke(objTest2, new object[] { });    //泛型有参数  var method4 = type.GetMethod("Show4");//查找指定方法  var genericMethod4 = method4.MakeGenericMethod(new Type[] { typeof(string) });//指定泛型参数类型T  genericMethod4.Invoke(objTest2, new object[] { 123, "泛型string参数" });</pre> </div> <p>反射测试类</p> <blockquote> <p>位于SqlServerDB.dll中的ReflectionTest.cs文件中</p> </blockquote> <div class="ay1code"> <pre class="brush:csharp;">    /// &lt;summary&gt;      /// 反射测试类      /// &lt;/summary&gt;     public class ReflectionTest      {          //私有构造函数          private ReflectionTest()          {              Console.WriteLine("这是私有无参数构造方法");          }            //普通构造函数          //public ReflectionTest()          //{          //    Console.WriteLine("这是无参数构造方法");          //}            public ReflectionTest(string name)          {              Console.WriteLine($"这是有参数构造方法+参数值是：{name}");          }            public void Show1()          {              Console.WriteLine("调用普通方法", this.GetType());          }            private void Show2()          {              Console.WriteLine("调用私有方法",this.GetType());          }              public void Show3&lt;T&gt;()          {              Console.WriteLine("调用无参数泛型方法", this.GetType());          }            public void Show4&lt;T&gt;(int id,string name)          {              Console.WriteLine($"调用有参数泛型方法，参数是{id}，{name}", this.GetType());          }      }</pre> </div> <h2>操作泛型类和泛型方法</h2> <p>加载DLL文件</p> <div class="ay1code"> <pre class="brush:csharp;">Assembly assembly = Assembly.LoadFrom(@"SqlServerDB.dll");</pre> </div> <p>获取指定类型</p> <div class="ay1code"> <pre class="brush:csharp;">Type type = assembly.GetType("SqlServerDB.GenericClass`2").MakeGenericType(typeof(int), typeof(string));//一定给定具体类型参数</pre> </div> <p>调用泛型方法</p> <div class="ay1code"> <pre class="brush:csharp;">object objTest2 = Activator.CreateInstance(type);  var method = type.GetMethod("GenericMethod").MakeGenericMethod(typeof(int));  method.Invoke(objTest2, new object[] { });</pre> </div> <p>反射测试类</p> <blockquote> <p>位于SqlServerDB.dll中的GenericClass.cs文件中</p> </blockquote> <div class="ay1code"> <pre class="brush:csharp;">public class GenericClass&lt;T,W&gt;  {      public void GenericMethod&lt;TType&gt;()      {          Console.WriteLine("泛型类调用+泛型方法");      }  }</pre> </div> <h2>操作类属性字段</h2> <p>加载DLL文件</p> <div class="ay1code"> <pre class="brush:csharp;">Assembly assembly2 = Assembly.LoadFrom("SqlServerDB.dll");</pre> </div> <p>获取指定类型</p> <div class="ay1code"> <pre class="brush:csharp;">Type type2 = assembly2.GetType("SqlServerDB.PropertyClass");</pre> </div> <p>调用泛型方法</p> <div class="ay1code"> <pre class="brush:csharp;">object obj = Activator.CreateInstance(type2);  foreach (var property in type2.GetProperties())  {      Console.WriteLine(property.Name);      //给属性设置值      if (property.Name.Equals("Id"))      {          property.SetValue(obj, 1);      }      else if (property.Name.Equals("Name"))      {          property.SetValue(obj, "学习编程");      }      else if (property.Name.Equals("Phone"))      {          property.SetValue(obj, "123459789");      }      //获取属性值      Console.WriteLine(property.GetValue(obj));  }  </pre> </div> <p>反射测试类</p> <blockquote> <p>位于SqlServerDB.dll中的PropertyClass.cs文件中</p> </blockquote> <div class="ay1code"> <pre class="brush:csharp;">public class PropertyClass  {      public int Id { get; set; }      public string Name { get; set; }      public string Phone { get; set; }  }</pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-64060.htm">Go单体服务开发最佳实践</a></p>
+                                        <p>下一个：<a href="/news/article-64675.htm">Python学习 3 &#8211; while 循环语句</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-35725.htm" title="PyTorch的自动求导">PyTorch的自动求导</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-19-free-node-subscribe.htm" title="12月19日→19.6M/S|2024年最新免费节点Choc Node订阅链接地址">12月19日→19.6M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24844.htm" title="动物疫苗接种的目的是什么 动物疫苗接种的目的是什么呢">动物疫苗接种的目的是什么 动物疫苗接种的目的是什么呢</a></li>
+                        <li class="py-2"><a href="/news/article-65288.htm" title="宠物粮食代工厂家有哪些（宠物粮食代工厂家有哪些呢）">宠物粮食代工厂家有哪些（宠物粮食代工厂家有哪些呢）</a></li>
+                        <li class="py-2"><a href="/news/article-47510.htm" title="养猫最忌讳的一个生肖马是什么意思（养猫最忌讳的一个生肖马是什么意思啊）">养猫最忌讳的一个生肖马是什么意思（养猫最忌讳的一个生肖马是什么意思啊）</a></li>
+                        <li class="py-2"><a href="/news/article-21162.htm" title="学生没钱怎么开网店卖东西赚钱呢（学生没钱怎么开网店卖东西赚钱呢）">学生没钱怎么开网店卖东西赚钱呢（学生没钱怎么开网店卖东西赚钱呢）</a></li>
+                        <li class="py-2"><a href="/news/article-32832.htm" title="一文看懂HBase倒序分页查询（实现分页跳转）">一文看懂HBase倒序分页查询（实现分页跳转）</a></li>
+                        <li class="py-2"><a href="/news/article-31300.htm" title="不宜养花的4个属相（哪个生肖不宜养花）">不宜养花的4个属相（哪个生肖不宜养花）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-2-free-node-subscribe-links.htm" title="12月2日→18.1M/S|2024年最新免费节点Choc Node订阅链接地址">12月2日→18.1M/S|2024年最新免费节点Choc Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24354.htm" title="关于宠物猫疫苗的作文（关于宠物猫疫苗的作文怎么写）">关于宠物猫疫苗的作文（关于宠物猫疫苗的作文怎么写）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">91</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                <footer class="main-footer" style="background-image: url(/assets/website/img/chocnode/background/bg-1.jpg);">
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="auto-container">
+                    <div class="wrapper-box">
+                        <div class="copyright">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <div class="text">
+                                <a href="/">Choc Node免费机场订阅节点官网</a> 版权所有
+                                <br />
+                                Powered by WordPress
+                            </div>
+                        </div>
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#">Sitemap </a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Scroll to top-->
+        <div class="scroll-to-top scroll-to-target" data-target="html"><span class="flaticon-right-arrow-4"></span></div>
+        <script src="/assets/website/js/frontend/chocnode/jquery.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/popper.min.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/bootstrap.min.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/bootstrap-select.min.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/jquery.fancybox.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/isotope.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/owl.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/appear.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/wow.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/lazyload.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/scrollbar.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/TweenMax.min.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/swiper.min.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/jquery.polyglot.language.switcher.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/jquery.ajaxchimp.min.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/parallax-scroll.js"></script>
+        <script src="/assets/website/js/frontend/chocnode/script.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+    <!--End pagewrapper-->
+</body>
+
+</html>
