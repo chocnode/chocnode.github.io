@@ -237,44 +237,19 @@ Test-NetConnection <span class="token parameter variable">-ComputerName</span> e
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 如何按端口分流不同流量？</h5></div>
-    <div class="panel-body">
-        Sing-box 支持按端口匹配流量，将不同应用分配到指定节点。结合策略组使用，可实现精准分流，提高访问速度和网络稳定性，优化整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 的订阅更新支持自动导入节点吗？</h5></div>
-    <div class="panel-body">
-        支持。Nekoray 可以通过订阅 URL 自动下载节点，并根据用户配置更新本地节点列表。定期更新确保节点始终可用，减少手动维护的麻烦，提高使用便利性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hysteria2 的多路复用对短连接有何优势？</h5></div>
-    <div class="panel-body">
-        多路复用允许多个短连接共享同一通道，减少握手延迟和资源消耗。适合高频短连接应用，如游戏和即时通讯，可提高吞吐量和连接稳定性，优化网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 能否同步 iCloud 配置？</h5></div>
-    <div class="panel-body">
-        可以。Surfboard 支持 iCloud 同步功能，用户可在不同苹果设备上共享同一配置文件。这样即使更换手机或重装系统，也能自动恢复节点与分流设置。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Clash Premium 与普通版本有何不同？</h5></div>
     <div class="panel-body">
         Clash Premium 是 Clash 的增强版，增加了 TUN 模式、脚本功能、流量统计与规则订阅等高级特性。它更适合有复杂分流需求的用户，尤其是需要对系统级代理进行全局控制的场景。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何识别节点是否被封锁或限速？</h5></div>
+    <div class="panel-heading"><h5>如何防止 Clash 被系统防火墙阻断？</h5></div>
     <div class="panel-body">
-        通过对比不同节点的 speedtest、ping、下载测速以及 traceroute 路由变化来判断；若多个节点同时异常可能是本地网络问题，单个节点异常则可能被封锁或运营商限速，应尝试更换端口或传输方式。<hr />    </div>
+        请在防火墙设置中允许 Clash 的执行文件通过网络访问，并开放其监听端口。若使用 Windows Defender，可在防火墙高级规则中手动添加入站和出站规则，确保代理通信正常。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 支持 Hysteria 协议吗？</h5></div>
+    <div class="panel-heading"><h5>Sing-box 如何按端口分流不同流量？</h5></div>
     <div class="panel-body">
-        新版本的 WinXray 已整合了 V2Ray 内核更新，支持 Hysteria 协议。用户可通过导入 Clash 或 sing-box 类型的订阅使用基于 QUIC 的高性能连接，速度和稳定性均更出色。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的 PAC 模式适合哪些场景？</h5></div>
-    <div class="panel-body">
-        PAC 模式通过规则动态决定流量是否走代理。适合访问国内外混合网站环境，无需手动切换节点，自动分流提高网络访问效率和连接稳定性。<hr />    </div>
+        Sing-box 支持按端口匹配流量，将不同应用分配到指定节点。结合策略组使用，可实现精准分流，提高访问速度和网络稳定性，优化整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何安全地共享订阅链接而不泄露个人信息？</h5></div>
@@ -282,9 +257,34 @@ Test-NetConnection <span class="token parameter variable">-ComputerName</span> e
         避免将私人订阅直接在公开场合分享，若需要共享可在服务端生成只读或限速专用订阅，并定期更换 token。对外公开时移除或隐藏用户识别字段，确保他人无法通过订阅追溯出个人账户信息。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何防止 Clash 被系统防火墙阻断？</h5></div>
+    <div class="panel-heading"><h5>WinXray 的 PAC 模式适合哪些场景？</h5></div>
     <div class="panel-body">
-        请在防火墙设置中允许 Clash 的执行文件通过网络访问，并开放其监听端口。若使用 Windows Defender，可在防火墙高级规则中手动添加入站和出站规则，确保代理通信正常。    </div>
+        PAC 模式通过规则动态决定流量是否走代理。适合访问国内外混合网站环境，无需手动切换节点，自动分流提高网络访问效率和连接稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 支持 Hysteria 协议吗？</h5></div>
+    <div class="panel-body">
+        新版本的 WinXray 已整合了 V2Ray 内核更新，支持 Hysteria 协议。用户可通过导入 Clash 或 sing-box 类型的订阅使用基于 QUIC 的高性能连接，速度和稳定性均更出色。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何识别节点是否被封锁或限速？</h5></div>
+    <div class="panel-body">
+        通过对比不同节点的 speedtest、ping、下载测速以及 traceroute 路由变化来判断；若多个节点同时异常可能是本地网络问题，单个节点异常则可能被封锁或运营商限速，应尝试更换端口或传输方式。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hysteria2 的多路复用对短连接有何优势？</h5></div>
+    <div class="panel-body">
+        多路复用允许多个短连接共享同一通道，减少握手延迟和资源消耗。适合高频短连接应用，如游戏和即时通讯，可提高吞吐量和连接稳定性，优化网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekoray 的订阅更新支持自动导入节点吗？</h5></div>
+    <div class="panel-body">
+        支持。Nekoray 可以通过订阅 URL 自动下载节点，并根据用户配置更新本地节点列表。定期更新确保节点始终可用，减少手动维护的麻烦，提高使用便利性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Surfboard 能否同步 iCloud 配置？</h5></div>
+    <div class="panel-body">
+        可以。Surfboard 支持 iCloud 同步功能，用户可在不同苹果设备上共享同一配置文件。这样即使更换手机或重装系统，也能自动恢复节点与分流设置。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -313,16 +313,16 @@ Test-NetConnection <span class="token parameter variable">-ComputerName</span> e
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-11-1-free-node-subscribe.htm" title="11月1日→22.3M/S|2025年最新免费节点Shadowrocket节点/Singbox节点/Clash节点/SSR节点/V2ray节点订阅链接地址">11月1日→22.3M/S|2025年最新免费节点Shadowrocket节点/Singbox节点/Clash节点/SSR节点/V2ray节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-15-free-high-speed-nodes.htm" title="10月15日→21.3M/S|2025年最新免费节点Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点订阅链接地址">10月15日→21.3M/S|2025年最新免费节点Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-11-node-share-links.htm" title="10月11日→18.9M/S|2025年最新免费节点Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点订阅链接地址">10月11日→18.9M/S|2025年最新免费节点Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-8-free-subscribe-node.htm" title="11月8日→18.2M/S|2025年最新免费节点V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点订阅链接地址">11月8日→18.2M/S|2025年最新免费节点V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-5-node-share-links.htm" title="10月5日→21.7M/S|2025年最新免费节点Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Clash节点订阅链接地址">10月5日→21.7M/S|2025年最新免费节点Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Clash节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-25-free-high-speed-nodes.htm" title="10月25日→19.6M/S|2025年最新免费节点Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点订阅链接地址">10月25日→19.6M/S|2025年最新免费节点Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-20-free-high-speed-nodes.htm" title="10月20日→18.8M/S|2025年最新免费节点Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Clash节点订阅链接地址">10月20日→18.8M/S|2025年最新免费节点Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Clash节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-8-node-share-links.htm" title="10月8日→19.9M/S|2025年最新免费节点Shadowrocket节点/Singbox节点/Clash节点/SSR节点/V2ray节点订阅链接地址">10月8日→19.9M/S|2025年最新免费节点Shadowrocket节点/Singbox节点/Clash节点/SSR节点/V2ray节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-7-free-node-subscribe.htm" title="10月7日→22.2M/S|2025年最新免费节点SSR节点/Clash节点/V2ray节点/Singbox节点/Shadowrocket节点订阅链接地址">10月7日→22.2M/S|2025年最新免费节点SSR节点/Clash节点/V2ray节点/Singbox节点/Shadowrocket节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-15-node-share.htm" title="11月15日→21.3M/S|2025年最新免费节点Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点订阅链接地址">11月15日→21.3M/S|2025年最新免费节点Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-10-free-node-subscribe.htm" title="11月10日→22.8M/S|2025年最新免费节点SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点订阅链接地址">11月10日→22.8M/S|2025年最新免费节点SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-23-node-share.htm" title="11月23日→22.6M/S|2025年最新免费节点Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点订阅链接地址">11月23日→22.6M/S|2025年最新免费节点Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-18-node-share.htm" title="11月18日→20.4M/S|2025年最新免费节点Shadowrocket节点/SSR节点/V2ray节点/Clash节点/Singbox节点订阅链接地址">11月18日→20.4M/S|2025年最新免费节点Shadowrocket节点/SSR节点/V2ray节点/Clash节点/Singbox节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-13-free-high-speed-nodes.htm" title="10月13日→18.5M/S|2025年最新免费节点Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点订阅链接地址">10月13日→18.5M/S|2025年最新免费节点Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-7-node-share.htm" title="11月7日→18.1M/S|2025年最新免费节点Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点订阅链接地址">11月7日→18.1M/S|2025年最新免费节点Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-6-free-node-subscribe-links.htm" title="11月6日→19.2M/S|2025年最新免费节点Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点订阅链接地址">11月6日→19.2M/S|2025年最新免费节点Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-19-node-share-links.htm" title="11月19日→20.3M/S|2025年最新免费节点Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点订阅链接地址">11月19日→20.3M/S|2025年最新免费节点Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-26-free-high-speed-nodes.htm" title="10月26日→20M/S|2025年最新免费节点Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/SSR节点订阅链接地址">10月26日→20M/S|2025年最新免费节点Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/SSR节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-16-node-share.htm" title="10月16日→21.7M/S|2025年最新免费节点Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点订阅链接地址">10月16日→21.7M/S|2025年最新免费节点Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -334,7 +334,7 @@ Test-NetConnection <span class="token parameter variable">-ComputerName</span> e
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">17</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">24</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
