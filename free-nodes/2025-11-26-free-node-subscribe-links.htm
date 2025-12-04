@@ -308,14 +308,9 @@ A4：免费节点通常安全性较低，存在隐私泄露风险，建议使用
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>QuantumultX 的 MITM 功能如何使用？</h5></div>
+    <div class="panel-heading"><h5>如何给 Clash 添加自定义域名白名单以提升访问体验？</h5></div>
     <div class="panel-body">
-        QuantumultX 的 MITM（中间人）功能可拦截 HTTPS 流量，用于修改或分析请求与响应。开启时需安装客户端生成的根证书，确保能正确解析加密数据。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 支持 Hysteria 协议吗？</h5></div>
-    <div class="panel-body">
-        新版本的 WinXray 已整合了 V2Ray 内核更新，支持 Hysteria 协议。用户可通过导入 Clash 或 sing-box 类型的订阅使用基于 QUIC 的高性能连接，速度和稳定性均更出色。<hr />    </div>
+        在 rules 中添加 `DOMAIN-SUFFIX,example.com,DIRECT` 或 `DOMAIN-KEYWORD,example,DIRECT` 条目，将常用且可靠的站点设为直连，可减少代理绕行延迟并避免因代理造成的登录/验证问题。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何在路由器上使用 PassWall2 为不同设备设置不同策略？</h5></div>
@@ -323,19 +318,9 @@ A4：免费节点通常安全性较低，存在隐私泄露风险，建议使用
         在 PassWall2 的规则或策略组中为固定 IP 或 MAC 地址创建特定路由条目，将其映射到不同的策略组（如工作机走直连、游戏机走低延迟节点），并保存规则后重载以生效。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 支持按 IP 段分流吗？</h5></div>
+    <div class="panel-heading"><h5>WinXray 支持 Trojan 协议吗？</h5></div>
     <div class="panel-body">
-        支持。Sing-box 可根据 IP 段将国内流量直连，国外流量走代理，结合策略组实现智能分流。这样可保证访问速度和稳定性，同时优化节点使用效率，提高网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何给 Clash 添加自定义域名白名单以提升访问体验？</h5></div>
-    <div class="panel-body">
-        在 rules 中添加 `DOMAIN-SUFFIX,example.com,DIRECT` 或 `DOMAIN-KEYWORD,example,DIRECT` 条目，将常用且可靠的站点设为直连，可减少代理绕行延迟并避免因代理造成的登录/验证问题。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 的主要用途是什么？</h5></div>
-    <div class="panel-body">
-        Hiddify Next 是 Hiddify 系列的新版本，集成了 VLESS、Trojan、Reality 等新型协议支持。它为用户提供一站式代理配置与分享功能，适合初学者快速上手使用。<hr />    </div>
+        WinXray 内核基于 Xray-core，因此原生支持 Trojan 协议。用户在导入配置时，只需选择 Trojan 类型节点即可，无需额外插件，非常适合需要 TLS 伪装的环境。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>PassWall2 如何结合延迟选择最优节点？</h5></div>
@@ -343,19 +328,34 @@ A4：免费节点通常安全性较低，存在隐私泄露风险，建议使用
         PassWall2 定期测速节点延迟，并结合策略组自动选择延迟最低的节点。无需手动操作即可保证网页、视频和游戏流量快速稳定访问，提高整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 节点延迟检测对视频流量有何作用？</h5></div>
-    <div class="panel-body">
-        WinXray 会定期测速节点延迟和丢包率，并结合策略组自动选择最佳节点。保证视频流量通过低延迟节点，减少缓冲和卡顿，提高播放流畅度和体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Matsuri 节点延迟排序功能如何使用？</h5></div>
     <div class="panel-body">
         Matsuri 会定期测速节点延迟，并根据结果排序。用户可选择延迟最低的节点进行访问，结合策略组实现自动切换，提高网络速度和连接稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 支持 Trojan 协议吗？</h5></div>
+    <div class="panel-heading"><h5>Sing-box 支持按 IP 段分流吗？</h5></div>
     <div class="panel-body">
-        WinXray 内核基于 Xray-core，因此原生支持 Trojan 协议。用户在导入配置时，只需选择 Trojan 类型节点即可，无需额外插件，非常适合需要 TLS 伪装的环境。    </div>
+        支持。Sing-box 可根据 IP 段将国内流量直连，国外流量走代理，结合策略组实现智能分流。这样可保证访问速度和稳定性，同时优化节点使用效率，提高网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 支持 Hysteria 协议吗？</h5></div>
+    <div class="panel-body">
+        新版本的 WinXray 已整合了 V2Ray 内核更新，支持 Hysteria 协议。用户可通过导入 Clash 或 sing-box 类型的订阅使用基于 QUIC 的高性能连接，速度和稳定性均更出色。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hiddify Next 的主要用途是什么？</h5></div>
+    <div class="panel-body">
+        Hiddify Next 是 Hiddify 系列的新版本，集成了 VLESS、Trojan、Reality 等新型协议支持。它为用户提供一站式代理配置与分享功能，适合初学者快速上手使用。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>QuantumultX 的 MITM 功能如何使用？</h5></div>
+    <div class="panel-body">
+        QuantumultX 的 MITM（中间人）功能可拦截 HTTPS 流量，用于修改或分析请求与响应。开启时需安装客户端生成的根证书，确保能正确解析加密数据。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 节点延迟检测对视频流量有何作用？</h5></div>
+    <div class="panel-body">
+        WinXray 会定期测速节点延迟和丢包率，并结合策略组自动选择最佳节点。保证视频流量通过低延迟节点，减少缓冲和卡顿，提高播放流畅度和体验。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -384,16 +384,16 @@ A4：免费节点通常安全性较低，存在隐私泄露风险，建议使用
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-11-22-node-share.htm" title="11月22日→21.6M/S|2025年最新免费节点Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点订阅链接地址">11月22日→21.6M/S|2025年最新免费节点Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-11-free-node-subscribe.htm" title="11月11日→22.5M/S|2025年最新免费节点Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点订阅链接地址">11月11日→22.5M/S|2025年最新免费节点Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-19-node-share-links.htm" title="11月19日→20.3M/S|2025年最新免费节点Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点订阅链接地址">11月19日→20.3M/S|2025年最新免费节点Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Singbox节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-27-free-high-speed-nodes.htm" title="10月27日→20.8M/S|2025年最新免费节点SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点订阅链接地址">10月27日→20.8M/S|2025年最新免费节点SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-22-free-high-speed-nodes.htm" title="10月22日→22.5M/S|2025年最新免费节点Shadowrocket节点/Singbox节点/SSR节点/Clash节点/V2ray节点订阅链接地址">10月22日→22.5M/S|2025年最新免费节点Shadowrocket节点/Singbox节点/SSR节点/Clash节点/V2ray节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-12-free-high-speed-nodes.htm" title="11月12日→19M/S|2025年最新免费节点Shadowrocket节点/V2ray节点/SSR节点/Clash节点/Singbox节点订阅链接地址">11月12日→19M/S|2025年最新免费节点Shadowrocket节点/V2ray节点/SSR节点/Clash节点/Singbox节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-18-node-share.htm" title="10月18日→19.5M/S|2025年最新免费节点V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点订阅链接地址">10月18日→19.5M/S|2025年最新免费节点V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-11-node-share-links.htm" title="10月11日→18.9M/S|2025年最新免费节点Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点订阅链接地址">10月11日→18.9M/S|2025年最新免费节点Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-10-6-free-subscribe-node.htm" title="10月6日→22.6M/S|2025年最新免费节点Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点订阅链接地址">10月6日→22.6M/S|2025年最新免费节点Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-24-free-node-subscribe-links.htm" title="10月24日→20.6M/S|2025年最新免费节点Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Clash节点订阅链接地址">10月24日→20.6M/S|2025年最新免费节点Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Clash节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-3-free-node-subscribe.htm" title="12月3日→22.9M/S|2025年最新免费节点Singbox节点/Clash节点/SSR节点/V2ray节点/Shadowrocket节点订阅链接地址">12月3日→22.9M/S|2025年最新免费节点Singbox节点/Clash节点/SSR节点/V2ray节点/Shadowrocket节点订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-9-free-node-subscribe-links.htm" title="11月9日→21.3M/S|2025年最新免费节点Clash节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点订阅链接地址">11月9日→21.3M/S|2025年最新免费节点Clash节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-23-node-share.htm" title="11月23日→22.6M/S|2025年最新免费节点Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点订阅链接地址">11月23日→22.6M/S|2025年最新免费节点Shadowrocket节点/Singbox节点/V2ray节点/SSR节点/Clash节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-13-free-high-speed-nodes.htm" title="10月13日→18.5M/S|2025年最新免费节点Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点订阅链接地址">10月13日→18.5M/S|2025年最新免费节点Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-16-node-share.htm" title="10月16日→21.7M/S|2025年最新免费节点Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点订阅链接地址">10月16日→21.7M/S|2025年最新免费节点Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-18-node-share.htm" title="11月18日→20.4M/S|2025年最新免费节点Shadowrocket节点/SSR节点/V2ray节点/Clash节点/Singbox节点订阅链接地址">11月18日→20.4M/S|2025年最新免费节点Shadowrocket节点/SSR节点/V2ray节点/Clash节点/Singbox节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-19-free-node-subscribe.htm" title="10月19日→20.2M/S|2025年最新免费节点Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点订阅链接地址">10月19日→20.2M/S|2025年最新免费节点Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-17-free-node-subscribe-links.htm" title="11月17日→22.4M/S|2025年最新免费节点Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点订阅链接地址">11月17日→22.4M/S|2025年最新免费节点Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -405,7 +405,10 @@ A4：免费节点通常安全性较低，存在隐私泄露风险，建议使用
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">24</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
