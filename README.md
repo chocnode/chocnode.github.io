@@ -1,4 +1,4 @@
-# 5月12日→21.1M/S|2025年最新免费节点Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点订阅链接地址  更新时间 2026-05-12 09:06:40
+# 5月19日→18.8M/S|2025年最新免费节点Clash节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点订阅链接地址  更新时间 2026-05-19 10:51:41
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://chocnode.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://chocnode.github.io/uploads/2026/05/0-20260512.yaml
-- https://chocnode.github.io/uploads/2026/05/1-20260512.yaml
-- https://chocnode.github.io/uploads/2026/05/2-20260512.yaml
-- https://chocnode.github.io/uploads/2026/05/3-20260512.yaml
-- https://chocnode.github.io/uploads/2026/05/4-20260512.yaml
+- https://chocnode.github.io/uploads/2026/05/0-20260519.yaml
+- https://chocnode.github.io/uploads/2026/05/1-20260519.yaml
+- https://chocnode.github.io/uploads/2026/05/2-20260519.yaml
+- https://chocnode.github.io/uploads/2026/05/3-20260519.yaml
+- https://chocnode.github.io/uploads/2026/05/4-20260519.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://chocnode.github.io/uploads/2026/05/0-20260512.txt
-- https://chocnode.github.io/uploads/2026/05/1-20260512.txt
-- https://chocnode.github.io/uploads/2026/05/2-20260512.txt
-- https://chocnode.github.io/uploads/2026/05/3-20260512.txt
-- https://chocnode.github.io/uploads/2026/05/4-20260512.txt
+- https://chocnode.github.io/uploads/2026/05/0-20260519.txt
+- https://chocnode.github.io/uploads/2026/05/1-20260519.txt
+- https://chocnode.github.io/uploads/2026/05/2-20260519.txt
+- https://chocnode.github.io/uploads/2026/05/3-20260519.txt
+- https://chocnode.github.io/uploads/2026/05/4-20260519.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://chocnode.github.io/uploads/2026/05/20260512.json
+- https://chocnode.github.io/uploads/2026/05/20260519.json
 
 ## 更多Clash节点订阅 ：
 
