@@ -419,19 +419,9 @@ FINAL, Proxy
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何优化 Clash DNS 解析速度？</h5></div>
+    <div class="panel-heading"><h5>VLESS 的 XTLS 模式能提升传输效率吗？</h5></div>
     <div class="panel-body">
-        可在配置文件中启用 fake-ip 模式或使用高质量的 DoH 服务（如 Cloudflare、AliDNS）。同时将 `fallback-filter.geoip` 设置为 true，避免国内域名被错误解析到境外，提高解析效率。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 如何结合规则屏蔽广告？</h5></div>
-    <div class="panel-body">
-        Surfboard 可通过规则文件匹配广告域名或 URL，并将其重定向或阻断。结合策略组自动更新规则，可实现广告屏蔽，提高浏览体验和节省带宽。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 的节点订阅更新是否可定时执行？</h5></div>
-    <div class="panel-body">
-        是的。Nekoray 可以设置订阅更新频率，如每天或每小时。程序会自动下载更新节点并替换旧节点，保证用户始终使用最新线路。<hr />    </div>
+        XTLS 模式通过减少冗余加密和握手次数，降低延迟，提高吞吐量。在高并发和短连接场景下，效率明显优于普通 TLS，同时保持数据安全性和隐蔽性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>PassWall2 的主要特性有哪些？</h5></div>
@@ -439,9 +429,9 @@ FINAL, Proxy
         PassWall2 是基于 OpenWRT 的代理管理面板，支持多种协议（V2Ray、Trojan、Shadowsocks 等），拥有图形化界面和分流规则设置功能。它能帮助路由器实现全局代理和智能分流。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 如何手动设置某应用直连？</h5></div>
+    <div class="panel-heading"><h5>Surfboard 如何结合规则屏蔽广告？</h5></div>
     <div class="panel-body">
-        在 Clash 的规则文件中添加 PROCESS-NAME 规则，如 `PROCESS-NAME,chrome.exe,DIRECT`。保存并重启后，该应用的流量将绕过代理直连。适用于游戏或内网程序等特殊场景。<hr />    </div>
+        Surfboard 可通过规则文件匹配广告域名或 URL，并将其重定向或阻断。结合策略组自动更新规则，可实现广告屏蔽，提高浏览体验和节省带宽。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何防止租用服务器被用作滥发或代理滥用？</h5></div>
@@ -449,14 +439,19 @@ FINAL, Proxy
         限制对外端口与协议，使用防火墙与入侵检测（如 fail2ban），监控流量异常并设置告警，定期审计登录行为，及时阻断滥用源并与服务商沟通封禁滥用账户以防引起供应商封禁整台机。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 的分流规则如何支持视频加速？</h5></div>
-    <div class="panel-body">
-        通过分流规则，将流媒体域名匹配到高速节点，其他网站走普通节点。这样可以保证视频播放流畅，同时节约带宽资源，提高整体网络效率和体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 的端口复用有什么风险？</h5></div>
     <div class="panel-body">
         SSR 支持多端口配置以复用服务，但若端口过多或设置冲突，可能被扫描工具识别或误判为异常服务。建议保持配置简洁，并合理分配端口范围以减少暴露风险。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekoray 的节点订阅更新是否可定时执行？</h5></div>
+    <div class="panel-body">
+        是的。Nekoray 可以设置订阅更新频率，如每天或每小时。程序会自动下载更新节点并替换旧节点，保证用户始终使用最新线路。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Shadowrocket 的分流规则如何支持视频加速？</h5></div>
+    <div class="panel-body">
+        通过分流规则，将流媒体域名匹配到高速节点，其他网站走普通节点。这样可以保证视频播放流畅，同时节约带宽资源，提高整体网络效率和体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Sing-box 如何按端口分流流量？</h5></div>
@@ -464,9 +459,14 @@ FINAL, Proxy
         Sing-box 支持根据端口匹配流量，将不同应用流量分配到指定节点。结合策略组使用，可精准分流，提高访问速度和网络稳定性，优化整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS 的 XTLS 模式能提升传输效率吗？</h5></div>
+    <div class="panel-heading"><h5>Clash 如何手动设置某应用直连？</h5></div>
     <div class="panel-body">
-        XTLS 模式通过减少冗余加密和握手次数，降低延迟，提高吞吐量。在高并发和短连接场景下，效率明显优于普通 TLS，同时保持数据安全性和隐蔽性。    </div>
+        在 Clash 的规则文件中添加 PROCESS-NAME 规则，如 `PROCESS-NAME,chrome.exe,DIRECT`。保存并重启后，该应用的流量将绕过代理直连。适用于游戏或内网程序等特殊场景。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何优化 Clash DNS 解析速度？</h5></div>
+    <div class="panel-body">
+        可在配置文件中启用 fake-ip 模式或使用高质量的 DoH 服务（如 Cloudflare、AliDNS）。同时将 `fallback-filter.geoip` 设置为 true，避免国内域名被错误解析到境外，提高解析效率。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -495,16 +495,16 @@ FINAL, Proxy
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-5-16-free-node-subscribe-links.htm" title="5月16日→20.7M/S|2025年最新免费节点V2ray节点/Shadowrocket节点/Trojan节点/SSR节点/Clash节点/Singbox节点订阅链接地址">5月16日→20.7M/S|2025年最新免费节点V2ray节点/Shadowrocket节点/Trojan节点/SSR节点/Clash节点/Singbox节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-22-node-share-links.htm" title="4月22日→20.9M/S|2025年最新免费节点Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/V2ray节点订阅链接地址">4月22日→20.9M/S|2025年最新免费节点Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/V2ray节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-19-node-share.htm" title="4月19日→20.6M/S|2025年最新免费节点SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/Singbox节点订阅链接地址">4月19日→20.6M/S|2025年最新免费节点SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/Singbox节点订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-5-18-free-high-speed-nodes.htm" title="5月18日→18.9M/S|2025年最新免费节点Shadowrocket节点/SSR节点/Clash节点/Trojan节点/V2ray节点/Singbox节点订阅链接地址">5月18日→18.9M/S|2025年最新免费节点Shadowrocket节点/SSR节点/Clash节点/Trojan节点/V2ray节点/Singbox节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-21-free-node-subscribe-links.htm" title="4月21日→20.9M/S|2025年最新免费节点V2ray节点/Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/SSR节点订阅链接地址">4月21日→20.9M/S|2025年最新免费节点V2ray节点/Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/SSR节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-13-free-node-subscribe-links.htm" title="5月13日→19.2M/S|2025年最新免费节点Shadowrocket节点/SSR节点/Trojan节点/V2ray节点/Clash节点/Singbox节点订阅链接地址">5月13日→19.2M/S|2025年最新免费节点Shadowrocket节点/SSR节点/Trojan节点/V2ray节点/Clash节点/Singbox节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-18-free-subscribe-node.htm" title="4月18日→21.8M/S|2025年最新免费节点SSR节点/Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点订阅链接地址">4月18日→21.8M/S|2025年最新免费节点SSR节点/Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-20-free-subscribe-node.htm" title="5月20日→21.7M/S|2025年最新免费节点Shadowrocket节点/V2ray节点/Clash节点/SSR节点/Trojan节点/Singbox节点订阅链接地址">5月20日→21.7M/S|2025年最新免费节点Shadowrocket节点/V2ray节点/Clash节点/SSR节点/Trojan节点/Singbox节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-15-free-high-speed-nodes.htm" title="4月15日→18.3M/S|2025年最新免费节点V2ray节点/Singbox节点/SSR节点/Trojan节点/Shadowrocket节点/Clash节点订阅链接地址">4月15日→18.3M/S|2025年最新免费节点V2ray节点/Singbox节点/SSR节点/Trojan节点/Shadowrocket节点/Clash节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-8-free-node-subscribe.htm" title="5月8日→18.7M/S|2025年最新免费节点Clash节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点订阅链接地址">5月8日→18.7M/S|2025年最新免费节点Clash节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-7-free-node-subscribe-links.htm" title="5月7日→19.1M/S|2025年最新免费节点Trojan节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点订阅链接地址">5月7日→19.1M/S|2025年最新免费节点Trojan节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-5-17-free-high-speed-nodes.htm" title="5月17日→18.3M/S|2025年最新免费节点Clash节点/SSR节点/Trojan节点/V2ray节点/Shadowrocket节点/Singbox节点订阅链接地址">5月17日→18.3M/S|2025年最新免费节点Clash节点/SSR节点/Trojan节点/V2ray节点/Shadowrocket节点/Singbox节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-19-node-share.htm" title="5月19日→18M/S|2025年最新免费节点Clash节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点订阅链接地址">5月19日→18M/S|2025年最新免费节点Clash节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-26-node-share-links.htm" title="4月26日→18.5M/S|2025年最新免费节点V2ray节点/Trojan节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点订阅链接地址">4月26日→18.5M/S|2025年最新免费节点V2ray节点/Trojan节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-14-free-high-speed-nodes.htm" title="5月14日→21.5M/S|2025年最新免费节点Shadowrocket节点/Trojan节点/Singbox节点/V2ray节点/SSR节点/Clash节点订阅链接地址">5月14日→21.5M/S|2025年最新免费节点Shadowrocket节点/Trojan节点/Singbox节点/V2ray节点/SSR节点/Clash节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-24-free-node-subscribe-links.htm" title="4月24日→22.1M/S|2025年最新免费节点V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点/Trojan节点订阅链接地址">4月24日→22.1M/S|2025年最新免费节点V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点/Trojan节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-15-free-node-subscribe.htm" title="5月15日→20.9M/S|2025年最新免费节点Clash节点/Shadowrocket节点/Trojan节点/Singbox节点/SSR节点/V2ray节点订阅链接地址">5月15日→20.9M/S|2025年最新免费节点Clash节点/Shadowrocket节点/Trojan节点/Singbox节点/SSR节点/V2ray节点订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-27-free-high-speed-nodes.htm" title="5月27日→20.7M/S|2025年最新免费节点Clash节点/Trojan节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点订阅链接地址">5月27日→20.7M/S|2025年最新免费节点Clash节点/Trojan节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -516,7 +516,7 @@ FINAL, Proxy
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
+                <h4><span class="badge" style="float: right;">28</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
