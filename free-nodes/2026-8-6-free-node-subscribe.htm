@@ -212,34 +212,13 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
 <p style="margin-bottom:3rem;color:#999;font-style:italic;">注：跳转链接可能会 <b style="color:red;">被墙</b> ，如多次打开失败，请先使用下面不稳定免费订阅后，再尝试点击链接</p><p>&nbsp;</p><p></p><h2>订阅链接</h2><p>&nbsp;</p><p><strong>clash订阅链接</strong></p><p>https://chocnode.github.io/uploads/2026/08/0-20260806.yaml</p><p>https://chocnode.github.io/uploads/2026/08/1-20260806.yaml</p><p>https://chocnode.github.io/uploads/2026/08/2-20260806.yaml</p><p>https://chocnode.github.io/uploads/2026/08/3-20260806.yaml</p><p>https://chocnode.github.io/uploads/2026/08/4-20260806.yaml</p><p>&nbsp;</p><p><strong>v2ray订阅链接:</strong></p><p>https://chocnode.github.io/uploads/2026/08/1-20260806.txt</p><p>https://chocnode.github.io/uploads/2026/08/4-20260806.txt</p><p><strong>sing-box订阅链接</strong></p><p>https://chocnode.github.io/uploads/2026/08/20260806.json</p><p>&nbsp;</p><p>如果您需要高质量的付费服务,我们强烈推荐您试试「<a href="https://mmm.happymao.cat/#/register?code=OMZAblTs" class="js_to" data-url="https://mmm.happymao.cat/#/register?code=" data-type="Happymao" data-code="OMZAblTs" rel="nofollow noopener" style="color:#c00;">Happy猫机场</a> 」。提供全球范围内快速稳定的高速节点,轻松处理8K高清视频流量,并可解锁流媒体网站和chatGPT。其服务器性能出色,确保您享受到高品质的体验。</p><h2>掌握核心操作：《冲突（Clash）》键位功能全解析与高效使用指南</h2>  <h2>引言：为什么需要了解Clash的键位？</h2>  <p>在当今复杂的网络环境中，代理工具已成为许多用户突破地域限制、优化网络体验的刚需。作为一款功能强大且高度可定制的代理客户端，《冲突（Clash）》凭借其多协议支持和灵活的规则配置脱颖而出。然而，许多用户初次接触时往往被其复杂的界面和操作逻辑劝退——究其根本，是对核心键位功能的不熟悉。本文将深入解析Clash的键位布局、功能设计及操作逻辑，帮助您从“手足无措”进阶到“游刃有余”。  </p>  <hr />  <h2>第一章：Clash键位的系统差异与入口定位</h2>  <h3>1.1 Windows平台的操作枢纽</h3>  <p>在Windows系统中，Clash通常以托盘图标形式常驻任务栏。<strong>左键单击图标</strong>可调出核心功能菜单：<br /> - <strong>状态面板</strong>：实时显示代理连接状态与流量消耗<br /> - <strong>模式切换</strong>：快速在全局/规则/直连模式间跳转（需配合快捷键<code>Ctrl+M</code>）<br /> - <strong>配置文件管理</strong>：通过右键菜单的“Config”子菜单实现多配置热切换  </p>  <blockquote>   <p><em>技巧：在托盘图标上使用鼠标滚轮可快速切换系统代理开关状态</em>  </p> </blockquote>  <h3>1.2 macOS的菜单栏控制哲学</h3>  <p>Mac用户可通过菜单栏右侧的Clash图标（⚡️状）访问核心功能：<br /> - <strong>悬浮窗展示</strong>：显示当前延迟与吞吐量（支持双击刷新）<br /> - <strong>高级选项</strong>：按住<code>Option</code>键点击图标可显示“强制重启核心”等隐藏功能<br /> - <strong>触控板手势</strong>：三指下滑快速调出日志面板（需在设置中启用）  </p>  <h3>1.3 Linux的终端化操作范式</h3>  <p>对于Linux用户，Clash更倾向于命令行交互：<br /> <code>bash clash-ctl -t # 测试所有节点延迟   clash-ctl -s shadowsocks.json # 热加载新配置</code> 推荐搭配<code>systemd</code>服务实现后台管理，通过<code>journalctl -u clash</code>查看详细日志。  </p>  <hr />  <h2>第二章：核心功能键位深度解析</h2>  <h3>2.1 模式切换的三种武器</h3>  <p>| 快捷键       | 功能描述                     | 适用场景               |<br /> |--------------|----------------------------|----------------------|<br /> | <code>Ctrl+G</code>     | 切换至全局代理模式           | 需要所有流量走代理时   |<br /> | <code>Ctrl+R</code>     | 启用基于规则的智能分流       | 日常科学上网首选       |<br /> | <code>Ctrl+D</code>     | 强制直连所有流量             | 访问本地服务或测速时   |  </p>  <p><em>注：长按<code>Shift</code>执行切换可跳过延迟测试</em>  </p>  <h3>2.2 配置管理的组合技</h3>  <ul> <li><strong>闪电加载</strong>：修改配置文件后按<code>F5</code>立即生效（比手动重启快3秒）  </li> <li><strong>多配置轮换</strong>：<code>Alt+1</code>~<code>Alt+9</code>绑定不同配置文件（需提前在GUI设置）  </li> <li><strong>云端同步</strong>：<code>Ctrl+Shift+U</code>自动拉取远程配置（配合WebDAV使用更佳）  </li> </ul>  <h3>2.3 诊断工具链</h3>  <p>当遇到连接异常时，以下键位可快速定位问题：<br /> 1. <code>Ctrl+L</code>调出实时日志窗口<br /> 2. <code>Ctrl+Shift+T</code>触发完整链路诊断<br /> 3. <code>F8</code>生成网络状态快照（保存为HTML报告）  </p>  <hr />  <h2>第三章：高阶玩家自定义秘籍</h2>  <h3>3.1 键位重映射实战</h3>  <p>通过编辑<code>preferences.ini</code>实现个性化绑定（示例）：<br /> <code>ini [hotkeys] reload_config = F12      # 将重载配置改为F12   toggle_system_proxy = ⌘+Space  # Mac绑定Command+空格</code></p>  <h3>3.2 鼠标手势增强方案</h3>  <p>Windows用户可通过AutoHotkey脚本实现：<br /> ```ahk</p>  <h1>IfWinActive, Clash  <p>XButton1::Send ^+{F5}    # 侧键触发快速重启<br /> WheelUp::Send ^{Up}      # 滚轮上调节点优先级<br /> ```</p>  <h3>3.3 移动端触控优化</h3>  <p>在手机客户端上，这些手势能提升效率：<br /> - 双指下滑：切换节点分组<br /> - 画圈手势：刷新订阅链接<br /> - 长按ping值：触发TCP延迟测试  </p>  <hr />  <h2>第四章：常见问题排雷指南</h2>  <p>❓<strong>为什么某些快捷键无效？</strong><br /> → 检查是否与其他软件冲突（如输入法/录屏工具）<br /> → 确认Clash版本≥v1.8.0（旧版功能受限）  </p>  <p>❓<strong>如何恢复默认键位设置？</strong><br /> 删除<code>%APPDATA%\clash\hotkeys.json</code>后重启客户端  </p>  <p>❓<strong>专业版额外支持哪些键位功能？</strong><br /> - 语音控制（需配合插件）：说出“切换香港节点”即可执行<br /> - 硬件绑定：将快捷操作写入鼠标宏键  </p>  <hr />  <h2>结语：键位背后的设计哲学</h2>  <p>Clash的键位体系看似复杂，实则遵循“高频操作一键直达，低频功能深层收纳”的交互原则。正如程序员偏爱快捷键提升编码效率，熟练掌握这些键位组合后，您将体验到：<br /> - <strong>响应速度提升</strong>：比鼠标操作快2-3个数量级<br /> - <strong>注意力更集中</strong>：减少界面切换带来的思维中断<br /> - <strong>个性化掌控感</strong>：通过自定义打造专属工作流  </p>  <p>建议新手从<code>F5刷新</code>和<code>Ctrl+M模式切换</code>两个最常用键位开始练习，逐步构建肌肉记忆。当某天您能闭眼完成全套代理管理操作时，便会理解“工具驯服”的真正含义——不是被复杂功能束缚，而是让人机交互如呼吸般自然。  </p>  <p>（全文共计2187字）</p> </div>
 <div class="clearfix"></div>
 <div class="col-md-12 mt-5">
-        <p>上一个：<a href="/free-nodes/node-share-links-2026-8-5.htm">8月5日→20.5M/S|2025年最新免费节点Clash节点/Shadowrocket节点/SSR节点/Trojan节点/Singbox节点/V2ray节点订阅链接地址</a></p>
         <p>下一个：<a href="/free-nodes/free-node-subscribe-links-2026-8-7.htm">8月7日→20.8M/S|2025年最新免费节点Clash节点/Singbox节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点订阅链接地址</a></p>
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 与 Nekobox 有什么区别？</h5></div>
-    <div class="panel-body">
-        Nekoray 是基于 sing-box 的多平台代理客户端，支持 Windows、Linux 等系统；而 Nekobox 则是为 Android 设计的移动版本。两者共享相同的核心逻辑，均支持 VMess、VLess、Trojan 等协议，适合跨设备同步使用。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hysteria2 多路复用在短连接中优势是什么？</h5></div>
-    <div class="panel-body">
-        多路复用允许多个短连接共享同一通道，减少握手延迟和资源消耗。适合高频短连接场景，如游戏和即时通讯，提升吞吐量和连接稳定性，优化网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Netch 是否可以代理局域网设备？</h5></div>
     <div class="panel-body">
         可以。Netch 支持启用局域网共享功能，使同一网络下的其他设备通过主机的代理访问外网。需确保防火墙允许入站连接，且代理端口在局域网中开放。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的 DNS 模块如何提升解析速度？</h5></div>
-    <div class="panel-body">
-        V2Ray 内置 DNS 模块支持并行解析，可同时请求多个上游 DNS 服务器。用户可配置本地优先解析或远程解析策略，从而减少域名污染与延迟问题。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 混淆方式如何提升抗封锁能力？</h5></div>
-    <div class="panel-body">
-        混淆方式可将流量伪装成正常 HTTPS 或 HTTP 数据，降低被 DPI 检测风险。合理选择协议和混淆组合，可以提升节点稳定性和长期可用性，确保科学上网顺畅。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 多策略组如何管理大量节点？</h5></div>
@@ -247,9 +226,14 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         多策略组可将节点按地区、延迟或用途分类，并结合规则文件自动分流流量。这样可快速选择最优节点，提高访问速度和稳定性，同时优化节点管理和维护效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLess + Reality 的优势主要体现在哪些方面？</h5></div>
+    <div class="panel-heading"><h5>Shadowrocket 的分流规则如何实现广告拦截？</h5></div>
     <div class="panel-body">
-        Reality 采用非传统 TLS 流量伪装方式，通过模拟目标网站证书与握手特征来隐藏代理特征，相较于普通 VLess + TLS 更难被识别。它还具备更高的性能与更少的明文特征，适合高安全需求环境。<hr />    </div>
+        通过配置规则，将广告域名或请求路径匹配到黑名单策略，使请求直接阻断或重定向到本地地址。这样用户浏览网页或使用应用时可自动屏蔽大部分广告内容。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekoray 与 Nekobox 有什么区别？</h5></div>
+    <div class="panel-body">
+        Nekoray 是基于 sing-box 的多平台代理客户端，支持 Windows、Linux 等系统；而 Nekobox 则是为 Android 设计的移动版本。两者共享相同的核心逻辑，均支持 VMess、VLess、Trojan 等协议，适合跨设备同步使用。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Trojan 服务端出现 handshake timeout 如何处理？</h5></div>
@@ -257,14 +241,29 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         该错误通常由网络延迟或证书配置不一致导致。请检查服务器带宽是否充足、TLS 证书链完整，并确保客户端 SNI 与证书匹配。必要时更换节点或优化拥塞控制算法。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 混淆方式如何提升抗封锁能力？</h5></div>
+    <div class="panel-body">
+        混淆方式可将流量伪装成正常 HTTPS 或 HTTP 数据，降低被 DPI 检测风险。合理选择协议和混淆组合，可以提升节点稳定性和长期可用性，确保科学上网顺畅。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>VMess AEAD 加密在高封锁地区的优势？</h5></div>
     <div class="panel-body">
         AEAD 加密可防止数据篡改和流量特征泄露，降低被 DPI 检测风险。在高封锁地区使用，可保证节点长期稳定可用，同时提升数据传输安全性和访问可靠性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 的分流规则如何实现广告拦截？</h5></div>
+    <div class="panel-heading"><h5>Hysteria2 多路复用在短连接中优势是什么？</h5></div>
     <div class="panel-body">
-        通过配置规则，将广告域名或请求路径匹配到黑名单策略，使请求直接阻断或重定向到本地地址。这样用户浏览网页或使用应用时可自动屏蔽大部分广告内容。    </div>
+        多路复用允许多个短连接共享同一通道，减少握手延迟和资源消耗。适合高频短连接场景，如游戏和即时通讯，提升吞吐量和连接稳定性，优化网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLess + Reality 的优势主要体现在哪些方面？</h5></div>
+    <div class="panel-body">
+        Reality 采用非传统 TLS 流量伪装方式，通过模拟目标网站证书与握手特征来隐藏代理特征，相较于普通 VLess + TLS 更难被识别。它还具备更高的性能与更少的明文特征，适合高安全需求环境。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 的 DNS 模块如何提升解析速度？</h5></div>
+    <div class="panel-body">
+        V2Ray 内置 DNS 模块支持并行解析，可同时请求多个上游 DNS 服务器。用户可配置本地优先解析或远程解析策略，从而减少域名污染与延迟问题。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -312,16 +311,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-8-12-free-subscribe-node.htm" title="8月12日→22.1M/S|2025年最新免费节点V2ray节点/Clash节点/Trojan节点/SSR节点/Singbox节点/Shadowrocket节点订阅链接地址">8月12日→22.1M/S|2025年最新免费节点V2ray节点/Clash节点/Trojan节点/SSR节点/Singbox节点/Shadowrocket节点订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-8-3.htm" title="8月3日→22.5M/S|2025年最新免费节点Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Trojan节点/Clash节点订阅链接地址">8月3日→22.5M/S|2025年最新免费节点Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Trojan节点/Clash节点订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-20-free-subscribe-node.htm" title="7月20日→22.3M/S|2025年最新免费节点Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/SSR节点订阅链接地址">7月20日→22.3M/S|2025年最新免费节点Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点/SSR节点订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-4-free-node-subscribe.htm" title="8月4日→20.3M/S|2025年最新免费节点Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/SSR节点/V2ray节点订阅链接地址">8月4日→20.3M/S|2025年最新免费节点Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/SSR节点/V2ray节点订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-7-29.htm" title="7月29日→19.1M/S|2025年最新免费节点Shadowrocket节点/V2ray节点/Clash节点/Trojan节点/Singbox节点/SSR节点订阅链接地址">7月29日→19.1M/S|2025年最新免费节点Shadowrocket节点/V2ray节点/Clash节点/Trojan节点/Singbox节点/SSR节点订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-21-free-high-speed-nodes.htm" title="7月21日→18.2M/S|2025年最新免费节点Trojan节点/SSR节点/Clash节点/Singbox节点/Shadowrocket节点/V2ray节点订阅链接地址">7月21日→18.2M/S|2025年最新免费节点Trojan节点/SSR节点/Clash节点/Singbox节点/Shadowrocket节点/V2ray节点订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-13.htm" title="8月13日→18.4M/S|2025年最新免费节点SSR节点/Singbox节点/Trojan节点/V2ray节点/Shadowrocket节点/Clash节点订阅链接地址">8月13日→18.4M/S|2025年最新免费节点SSR节点/Singbox节点/Trojan节点/V2ray节点/Shadowrocket节点/Clash节点订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-10-node-share.htm" title="8月10日→22.4M/S|2025年最新免费节点Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点订阅链接地址">8月10日→22.4M/S|2025年最新免费节点Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-2-free-node-subscribe.htm" title="9月2日→18.8M/S|2025年最新免费节点Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Trojan节点订阅链接地址">9月2日→18.8M/S|2025年最新免费节点Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Trojan节点订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-9-1.htm" title="9月1日→22.6M/S|2025年最新免费节点Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Trojan节点订阅链接地址">9月1日→22.6M/S|2025年最新免费节点Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Singbox节点/Trojan节点订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-9.htm" title="8月9日→18.3M/S|2025年最新免费节点Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/Trojan节点/SSR节点订阅链接地址">8月9日→18.3M/S|2025年最新免费节点Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/Trojan节点/SSR节点订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-8-19.htm" title="8月19日→21.5M/S|2025年最新免费节点V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点订阅链接地址">8月19日→21.5M/S|2025年最新免费节点V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-8-31.htm" title="8月31日→18.9M/S|2025年最新免费节点V2ray节点/Shadowrocket节点/SSR节点/Trojan节点/Clash节点/Singbox节点订阅链接地址">8月31日→18.9M/S|2025年最新免费节点V2ray节点/Shadowrocket节点/SSR节点/Trojan节点/Clash节点/Singbox节点订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-8-node-share.htm" title="8月8日→19.2M/S|2025年最新免费节点Clash节点/Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Trojan节点订阅链接地址">8月8日→19.2M/S|2025年最新免费节点Clash节点/Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Trojan节点订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-27.htm" title="8月27日→21.8M/S|2025年最新免费节点Clash节点/SSR节点/V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点订阅链接地址">8月27日→21.8M/S|2025年最新免费节点Clash节点/SSR节点/V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点订阅链接地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-7.htm" title="8月7日→20.8M/S|2025年最新免费节点Clash节点/Singbox节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点订阅链接地址">8月7日→20.8M/S|2025年最新免费节点Clash节点/Singbox节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-17-free-node-subscribe-links.htm" title="7月17日→20.1M/S|2025年最新免费节点V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Trojan节点/Clash节点订阅链接地址">7月17日→20.1M/S|2025年最新免费节点V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Trojan节点/Clash节点订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-23-free-node-subscribe-links.htm" title="7月23日→22.5M/S|2025年最新免费节点SSR节点/Shadowrocket节点/Trojan节点/Clash节点/Singbox节点/V2ray节点订阅链接地址">7月23日→22.5M/S|2025年最新免费节点SSR节点/Shadowrocket节点/Trojan节点/Clash节点/Singbox节点/V2ray节点订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-28-free-node-subscribe.htm" title="8月28日→22.6M/S|2025年最新免费节点V2ray节点/Trojan节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点订阅链接地址">8月28日→22.6M/S|2025年最新免费节点V2ray节点/Trojan节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点订阅链接地址</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -333,10 +332,10 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                     </ul>
     </div>
